@@ -1,10 +1,35 @@
-import { motion } from "framer-motion";
+import { motion, animate } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const ideaStats = [
   { value: "200+", label: "Successful projects" },
   { value: "99%", label: "On-time delivery" },
   { value: "120%", label: "Client satisfaction" },
 ];
+function Counter({ value }: { value: string }) {
+  const number = parseInt(value);
+  const suffix = value.replace(number.toString(), "");
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const controls = animate(0, number, {
+      duration: 2,
+      onUpdate(latest) {
+        setCount(Math.floor(latest));
+      },
+    });
+
+    return () => controls.stop();
+  }, [number]);
+
+  return (
+    <span>
+      {count}
+      {suffix}
+    </span>
+  );
+}
 
 export default function TransformSection() {
   return (
@@ -27,7 +52,9 @@ export default function TransformSection() {
           <div className="col-span-full grid grid-cols-1 gap-10 sm:grid-cols-3 lg:col-span-3 lg:gap-8">
             {ideaStats.map((item) => (
               <div key={item.label}>
-                <p className="text-4xl font-extrabold text-cyan-400 sm:text-5xl md:text-6xl lg:text-7xl">{item.value}</p>
+                <p className="text-4xl font-extrabold text-cyan-400 sm:text-5xl md:text-6xl lg:text-7xl">
+  <Counter value={item.value} />
+</p>
                 <p className="mt-3 text-base font-medium text-white sm:text-lg lg:text-xl">{item.label}</p>
               </div>
             ))}

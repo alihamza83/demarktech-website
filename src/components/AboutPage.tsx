@@ -37,7 +37,7 @@ export default function AboutPage() {
 
       <div className="space-y-6 text-[15px] leading-7 text-gray-300">
               <p>
-                Founded to help ambitious teams ship faster, GitLayer blends creative craft with pragmatic delivery. We work
+                Founded to help ambitious teams ship faster, DemarkTech blends creative craft with pragmatic delivery. We work
                 with B2B companies, consumer brands, and startups on strategies that are clear, measurable, and built to last.
               </p>
               <p>
@@ -102,7 +102,7 @@ export default function AboutPage() {
   Want to Grow
 </h2>
               <p className="mt-5 text-sm leading-7 text-gray-300">
-                Whether you are finding product–market fit or scaling a mature channel mix, GitLayer brings senior attention
+                Whether you are finding product–market fit or scaling a mature channel mix, DemarkTech brings senior attention
                 across strategy, UX, engineering, and growth. We have shipped alongside teams in SaaS, commerce, healthcare, media,
                 and more.
               </p>

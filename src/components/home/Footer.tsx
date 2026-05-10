@@ -93,7 +93,7 @@ useEffect(() => {
         </div>
 
         <div className="pt-6 text-center text-xs text-gray-500 sm:text-sm">
-          © {year} DenMarkTech. All rights reserved.
+          © {year} DeMarkTech. All rights reserved.
         </div>
 
         

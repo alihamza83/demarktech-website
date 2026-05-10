@@ -2,7 +2,7 @@ const testimonials = [
   {
     stars: "★★★★★",
     quote:
-      "GitLayer completely transformed our online presence. Our website traffic doubled in just two months, and the quality of leads coming in has never been better.",
+      "DemarkTech completely transformed our online presence. Our website traffic doubled in just two months, and the quality of leads coming in has never been better.",
     name: "Sarah Ahmed",
     role: "CEO, NexaStartup",
     initials: "SA",
@@ -11,7 +11,7 @@ const testimonials = [
   {
     stars: "★★★★★",
     quote:
-      "We hired GitLayer to build our e-commerce store and manage our social media. The results were incredible — sales went up 3x and our Instagram grew rapidly.",
+      "We hired DemarkTech to build our e-commerce store and manage our social media. The results were incredible — sales went up 3x and our Instagram grew rapidly.",
     name: "Kareem Rashid",
     role: "Founder, StyleHub",
     initials: "KR",
@@ -20,7 +20,7 @@ const testimonials = [
   {
     stars: "★★★★★",
     quote:
-      "As a startup, we needed a partner who could move fast and deliver big. GitLayer did exactly that — from branding to our app launch, everything was seamless.",
+      "As a startup, we needed a partner who could move fast and deliver big. DemarkTech did exactly that — from branding to our app launch, everything was seamless.",
     name: "Layla Patel",
     role: "Co-Founder, QuickEats",
     initials: "LP",
@@ -29,7 +29,7 @@ const testimonials = [
   {
     stars: "★★★★★",
     quote:
-      "Our SEO results are beyond what we expected. GitLayer’s content strategy helped us rank for key terms and brought in clients we’d never reached before.",
+      "Our SEO results are beyond what we expected. DemarkTech’s content strategy helped us rank for key terms and brought in clients we’d never reached before.",
     name: "Daniel Morris",
     role: "Managing Partner, LexPro",
     initials: "DM",
@@ -51,7 +51,7 @@ export default function ClientsPage() {
         <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-white sm:text-6xl">What Our Clients Say</h1>
         <p className="mt-5 max-w-3xl text-gray-300 sm:text-lg">
           Don&apos;t just take our word for it — here&apos;s what the businesses we&apos;ve partnered with have to say about working
-          with GitLayer.
+          with DemarkTech.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">

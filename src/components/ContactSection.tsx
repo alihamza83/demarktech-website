@@ -52,7 +52,7 @@ export default function ContactSection() {
       <div className="mx-auto max-w-7xl">
         <h2 className="text-4xl font-semibold leading-tight sm:text-5xl">Get in Touch With Us</h2>
         <p className="mt-5 max-w-4xl text-base text-gray-300 sm:text-lg">
-          GitLayer partners with teams that want a calmer, faster path from idea to launch — combining strategy, design,
+          DemarkTech partners with teams that want a calmer, faster path from idea to launch — combining strategy, design,
           and engineering without the typical agency drag.
         </p>
 
@@ -99,9 +99,26 @@ export default function ContactSection() {
           </div>
 
           <form
-            className="self-start rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
-            onSubmit={onSubmit}
-          >
+  className="relative self-start overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
+  onSubmit={onSubmit}
+>
+  <div className="pointer-events-none absolute inset-0 rounded-xl">
+  <div className="absolute left-0 top-0 h-[2px] w-full overflow-hidden">
+    <div className="animate-[shine_3s_linear_infinite] h-full w-1/2 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+  </div>
+
+  <div className="absolute right-0 top-0 h-full w-[2px] overflow-hidden">
+    <div className="animate-[shineVertical_3s_linear_infinite] h-1/2 w-full bg-gradient-to-b from-transparent via-cyan-400 to-transparent" />
+  </div>
+
+  <div className="absolute bottom-0 right-0 h-[2px] w-full overflow-hidden">
+    <div className="animate-[shine_3s_linear_infinite] h-full w-1/2 bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
+  </div>
+
+  <div className="absolute left-0 top-0 h-full w-[2px] overflow-hidden">
+    <div className="animate-[shineVertical_3s_linear_infinite] h-1/2 w-full bg-gradient-to-b from-transparent via-blue-400 to-transparent" />
+  </div>
+</div>
             <BudgetSelector options={budgetOptions} selected={selectedBudget} onSelect={setSelectedBudget} />
 
             <div className="mt-7 grid gap-4 sm:grid-cols-2">
