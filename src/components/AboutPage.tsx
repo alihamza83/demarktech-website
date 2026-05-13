@@ -7,25 +7,25 @@ export default function AboutPage() {
     >
       {/* BACKGROUND */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#0b2d40_0%,#050813_45%,#03050d_100%)]" />
-        <div className="blob-float absolute -left-24 top-24 h-72 w-72 rounded-full bg-cyan-500/20 blur-[90px]" />
-        <div className="blob-float blob-delay absolute right-10 top-8 h-80 w-80 rounded-full bg-blue-500/20 blur-[100px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/50" />
+        <div className="blob-float absolute -left-24 top-24 h-72 w-72 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-[90px]" />
+        <div className="blob-float blob-delay absolute right-10 top-8 h-80 w-80 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-[100px]" />
       </div>
 
       <div className="mx-auto max-w-6xl">
 
   {/* TOP HEADING */}
   <div className="mb-12">
-  <p className="text-xs font-semibold tracking-[0.3em] text-cyan-300/80">
+  <p className="text-xs font-semibold tracking-[0.3em] bg-gradient-to-r from-[#00AEEF] to-[#CB6CE6] text-transparent bg-clip-text">
     ABOUT US
   </p>
 
-  <h1 className="mt-4 font-['Orbitron'] text-4xl font-black leading-[0.95] tracking-[-0.03em] text-white sm:text-5xl lg:text-[72px]">
+  <h1 className="mt-4 font-['Orbitron'] text-4xl font-black leading-[0.95] tracking-[-0.03em] text-slate-900 sm:text-5xl lg:text-[72px]">
   We are DeMarkTech —
   <br />
-  <span className="inline-block max-w-full text-cyan-300 sm:whitespace-nowrap">
-    More than a marketing agency
-  </span>
+  <span className="inline-block max-w-full sm:whitespace-nowrap bg-gradient-to-r from-[#00AEEF] to-[#CB6CE6] bg-clip-text text-transparent">
+  More than a marketing agency
+</span>
 </h1>
 </div>
 
@@ -35,7 +35,7 @@ export default function AboutPage() {
     {/* LEFT */}
     <div className="text-left">
 
-      <div className="space-y-6 text-[15px] leading-7 text-gray-300">
+      <div className="space-y-6 text-[15px] leading-7 text-slate-600">
               <p>
                 Founded to help ambitious teams ship faster, DemarkTech blends creative craft with pragmatic delivery. We work
                 with B2B companies, consumer brands, and startups on strategies that are clear, measurable, and built to last.
@@ -76,15 +76,15 @@ export default function AboutPage() {
               ].map((card) => (
                 <article
                   key={card.title}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/10"
+                  className="rounded-2xl border border-blue-500/50 bg-white/80 p-6 backdrop-blur-sm shadow-md transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/20"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-cyan-400/15 text-lg text-cyan-200">
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-lg text-blue-600">
                       {card.icon}
                     </span>
-                    <h3 className="text-sm font-semibold text-white">{card.title}</h3>
+                    <h3 className="text-sm font-semibold text-slate-900">{card.title}</h3>
                   </div>
-                  <p className="mt-3 text-sm leading-6 text-gray-400">{card.body}</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{card.body}</p>
                 </article>
               ))}
             </div>
@@ -92,16 +92,16 @@ export default function AboutPage() {
 
           {/* RIGHT: big block */}
           <div className="mt-20 self-start lg:mt-30">
-            <div className="relative overflow-hidden rounded-3xl border border-cyan-300/25 bg-white/5 p-8 backdrop-blur-xl">
-              <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-cyan-400/10 blur-[60px]" />
-              <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-blue-500/10 blur-[70px]" />
+            <div className="relative overflow-hidden rounded-3xl border border-blue-500/50 bg-white/80 p-8 backdrop-blur-xl shadow-lg">
+              <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gradient-to-r from-blue-400/10 to-purple-400/10 blur-[60px]" />
+              <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-[70px]" />
 
-              <h2 className="text-2xl font-extrabold leading-snug text-white sm:text-[30px]">
+              <h2 className="text-2xl font-extrabold leading-snug text-slate-900 sm:text-[30px]">
   Built for Businesses That
   <br />
   Want to Grow
 </h2>
-              <p className="mt-5 text-sm leading-7 text-gray-300">
+              <p className="mt-5 text-sm leading-7 text-slate-600">
                 Whether you are finding product–market fit or scaling a mature channel mix, DemarkTech brings senior attention
                 across strategy, UX, engineering, and growth. We have shipped alongside teams in SaaS, commerce, healthcare, media,
                 and more.
@@ -112,7 +112,7 @@ export default function AboutPage() {
                   (pill) => (
                     <span
                       key={pill}
-                      className="rounded-full border border-cyan-300/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium text-cyan-200"
+                      className="rounded-full border border-blue-300/20 bg-gradient-to-r from-blue-500/10 to-purple-500/10 px-4 py-2 text-xs font-medium text-blue-700"
                     >
                       {pill}
                     </span>

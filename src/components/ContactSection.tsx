@@ -1,8 +1,9 @@
 import { useState, type FormEvent } from "react";
-import BudgetSelector from "./BudgetSelector";
 import InputField from "./InputField";
 
-const budgetOptions = ["10K - 20K", "20K - 30K", "30K - 40K", "40K - 50K", "More than 50K"];
+
+
+
 const contactItems = [
   { icon: "📞", title: "Phone number", text: "+7 (495) 123-45-67" },
   { icon: "@", title: "Email address", text: "info@demarktech.com" },
@@ -11,10 +12,11 @@ const contactItems = [
 ];
 
 export default function ContactSection() {
-  const [selectedBudget, setSelectedBudget] = useState("20K - 30K");
   const [formData, setFormData] = useState({
     name: "",
+    lastName:"",
     email: "",
+    service:"",
     company: "",
     phone: "",
     details: "",
@@ -39,26 +41,29 @@ export default function ContactSection() {
       window.alert("Form submitted successfully.");
     }
   };
+  
+  
 
   return (
+
     <section id="contact" className="relative w-full overflow-hidden px-6 pb-20 pt-36 lg:px-8">
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#0a2c3a_0%,#060915_45%,#03050d_100%)]" />
-        <div className="blob-float absolute -left-24 top-24 h-72 w-72 rounded-full bg-cyan-500/20 blur-[90px]" />
-        <div className="blob-float blob-delay absolute right-10 top-8 h-80 w-80 rounded-full bg-blue-500/20 blur-[100px]" />
-        <div className="blob-float absolute bottom-8 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-teal-400/20 blur-[95px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/50 to-purple-50/50" />
+        <div className="blob-float absolute -left-24 top-24 h-72 w-72 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-[90px]" />
+        <div className="blob-float blob-delay absolute right-10 top-8 h-80 w-80 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-[100px]" />
+        <div className="blob-float absolute bottom-8 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-gradient-to-r from-purple-400/20 to-blue-400/20 blur-[95px]" />
       </div>
 
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-4xl font-semibold leading-tight sm:text-5xl">Get in Touch With Us</h2>
-        <p className="mt-5 max-w-4xl text-base text-gray-300 sm:text-lg">
+        <h2 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">Get in Touch With Us</h2>
+        <p className="mt-5 max-w-4xl text-base text-slate-600 sm:text-lg">
           DemarkTech partners with teams that want a calmer, faster path from idea to launch — combining strategy, design,
           and engineering without the typical agency drag.
         </p>
 
         <div className="mt-10 grid grid-cols-1 items-start gap-10 lg:grid-cols-2">
           <div className="space-y-5">
-            <div className="group overflow-hidden rounded-xl border border-white/10 bg-black/20">
+            <div className="group overflow-hidden rounded-xl border border-slate-200/50 bg-white/80 shadow-lg">
               <img
                 src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
                 alt="Team discussing project"
@@ -71,27 +76,27 @@ export default function ContactSection() {
                 "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
                 "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
               ].map((src, idx) => (
-                <div key={src} className="group relative overflow-hidden rounded-lg border border-white/10">
+                <div key={src} className="group relative overflow-hidden rounded-lg border border-slate-200/50 bg-white/80 shadow-md">
                   <img
                     src={src}
                     alt={`Contact video thumbnail ${idx + 1}`}
                     className="h-36 w-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/20 transition group-hover:bg-black/35" />
-                  <span className="absolute left-1/2 top-1/2 grid h-11 w-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-sm text-black">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent transition group-hover:from-black/35" />
+                  <span className="absolute left-1/2 top-1/2 grid h-11 w-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-sm text-white shadow-lg">
                     ▶
                   </span>
                 </div>
               ))}
             </div>
 
-            <div className="space-y-4 rounded-xl border border-white/10 bg-black/20 p-5">
+            <div className="space-y-4 rounded-xl border border-slate-200/50 bg-white/80 shadow-lg p-5">
               {contactItems.map((item) => (
                 <div key={item.title} className="flex items-start gap-4">
-                  <span className="rounded-full bg-cyan-500/20 p-3 text-cyan-300">{item.icon}</span>
+                  <span className="rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-3 text-blue-600">{item.icon}</span>
                   <div>
-                    <p className="font-medium text-white">{item.title}</p>
-                    <p className="text-sm text-gray-300">{item.text}</p>
+                    <p className="font-medium text-slate-900">{item.title}</p>
+                    <p className="text-sm text-slate-600">{item.text}</p>
                   </div>
                 </div>
               ))}
@@ -99,16 +104,16 @@ export default function ContactSection() {
           </div>
 
           <form
-  className="relative self-start overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
+  className="relative self-start overflow-hidden rounded-xl border border-white/20 p-6 bg-gradient-to-r from-[#00AEEF]/50 to-[#CB6CE6]/50 backdrop-blur-xl shadow-lg"
   onSubmit={onSubmit}
 >
   <div className="pointer-events-none absolute inset-0 rounded-xl">
   <div className="absolute left-0 top-0 h-[2px] w-full overflow-hidden">
-    <div className="animate-[shine_3s_linear_infinite] h-full w-1/2 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+    <div className="animate-[shine_3s_linear_infinite] h-full w-1/2 bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
   </div>
 
   <div className="absolute right-0 top-0 h-full w-[2px] overflow-hidden">
-    <div className="animate-[shineVertical_3s_linear_infinite] h-1/2 w-full bg-gradient-to-b from-transparent via-cyan-400 to-transparent" />
+    <div className="animate-[shineVertical_3s_linear_infinite] h-1/2 w-full bg-gradient-to-b from-transparent via-blue-400 to-transparent" />
   </div>
 
   <div className="absolute bottom-0 right-0 h-[2px] w-full overflow-hidden">
@@ -119,57 +124,96 @@ export default function ContactSection() {
     <div className="animate-[shineVertical_3s_linear_infinite] h-1/2 w-full bg-gradient-to-b from-transparent via-blue-400 to-transparent" />
   </div>
 </div>
-            <BudgetSelector options={budgetOptions} selected={selectedBudget} onSelect={setSelectedBudget} />
-
+            
             <div className="mt-7 grid gap-4 sm:grid-cols-2">
               <InputField
-                label="Your name"
+                label="First Name"
                 name="name"
                 value={formData.name}
+                placeholder="Jhon"
                 onChange={onFieldChange}
                 error={errors.name}
               />
               <InputField
-                label="Your email"
-                name="email"
-                type="email"
-                value={formData.email}
+                label="Last Name"
+                name="lastName"
+                value={formData.lastName}
+                placeholder="Doe"
                 onChange={onFieldChange}
-                error={errors.email}
+                error={errors.lastName}
               />
-              <InputField
-                label="Company name"
-                name="company"
-                value={formData.company}
-                onChange={onFieldChange}
-                error={errors.company}
-              />
-              <InputField
-                label="Phone number"
-                name="phone"
-                value={formData.phone}
-                onChange={onFieldChange}
-                error={errors.phone}
-              />
+              
             </div>
+            <div className="mt-4">
+  <InputField
+    label="Email Address"
+    name="email"
+    type="email"
+    value={formData.email}
+    placeholder="john@comapny.com"
+    onChange={onFieldChange}
+    error={errors.email}
+  />
+</div>
+
+           <div className="mt-4">
+  <InputField
+  label="Phone Number"
+  name="phone"
+  type="tel"
+  value={formData.phone}
+  onChange={(name, value) => {
+    const numericValue = value.replace(/[^0-9]/g, "").slice(0, 11); ; // ✅ only numbers
+    onFieldChange(name, numericValue);
+  }}
+  placeholder="(5555)000-000"
+  error={errors.phone}
+/>
+</div>
+           <div className="mt-4">
+  <label className="mb-2 block text-sm font-medium text-slate-700">
+    Service You're Interested In
+  </label>
+
+  <select
+    name="service"
+    value={formData.service}
+    onChange={(e) => onFieldChange("service", e.target.value)}
+    className="w-full rounded-lg border border-slate-200 bg-white/80 p-3 text-sm text-slate-900 shadow-sm outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-200"
+  >
+    <option value="">Select a service</option>
+    <option>Digital Marketing</option>
+    <option>SEO</option>
+    <option>Paid Marketing (PPC)</option>
+    <option>Social Media Management</option>
+    <option>Content Marketing & Strategy</option>
+    <option>Brand Identity</option>
+    <option>Website Development</option>
+    <option>E-Commerce Development</option>
+    <option>App Development</option>
+    <option>Video Production</option>
+    <option>Multiple Services</option>
+  </select>
+</div>
             <div className="mt-4">
               <InputField
                 label="Project details"
                 name="details"
                 value={formData.details}
+                placeholder="Describe your project in detail..."
                 onChange={onFieldChange}
                 multiline
-                rows={11}
+                rows={8}
                 error={errors.details}
               />
             </div>            
 
             <button
-              type="submit"
-              className="mt-6 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-3 font-semibold text-[#021226] transition duration-300 hover:scale-[1.02] hover:shadow-[0_0_26px_rgba(34,211,238,0.45)]"
-            >
-              Submit Form
-            </button>
+  type="submit"
+  className="mt-6 w-full rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_26px_rgba(59,130,246,0.45)]"
+>
+  Submit Form
+</button>
           </form>
         </div>
       </div>

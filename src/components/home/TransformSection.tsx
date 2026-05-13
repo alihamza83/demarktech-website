@@ -33,7 +33,7 @@ function Counter({ value }: { value: string }) {
 
 export default function TransformSection() {
   return (
-    <section className="border-b border-t border-white/10">
+    <section className="border-b border-t border-slate-200/50">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ export default function TransformSection() {
           className="grid items-start gap-10 sm:gap-12 lg:grid-cols-4 lg:gap-10"
         >
           <div className="max-w-md lg:max-w-none lg:pr-2">
-            <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.05rem]">
+            <h2 className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl lg:text-[2.05rem]">
               Transforming ideas
               <br />
               into impact
@@ -52,10 +52,10 @@ export default function TransformSection() {
           <div className="col-span-full grid grid-cols-1 gap-10 sm:grid-cols-3 lg:col-span-3 lg:gap-8">
             {ideaStats.map((item) => (
               <div key={item.label}>
-                <p className="text-4xl font-extrabold text-cyan-400 sm:text-5xl md:text-6xl lg:text-7xl">
+                <p className="text-4xl font-extrabold bg-gradient-to-r from-[#00AEEF] to-[#CB6CE6] bg-clip-text text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
   <Counter value={item.value} />
 </p>
-                <p className="mt-3 text-base font-medium text-white sm:text-lg lg:text-xl">{item.label}</p>
+                <p className="mt-3 text-base font-medium text-slate-700 sm:text-lg lg:text-xl">{item.label}</p>
               </div>
             ))}
           </div>

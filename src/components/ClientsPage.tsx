@@ -41,15 +41,15 @@ export default function ClientsPage() {
   return (
     <section id="clients-page" className="relative w-full overflow-hidden px-6 pb-20 pt-36 lg:px-8">
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#0b2d40_0%,#050813_45%,#03050d_100%)]" />
-        <div className="blob-float absolute -left-24 top-24 h-72 w-72 rounded-full bg-cyan-500/18 blur-[90px]" />
-        <div className="blob-float blob-delay absolute right-10 top-8 h-80 w-80 rounded-full bg-blue-500/18 blur-[100px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/50" />
+        <div className="blob-float absolute -left-24 top-24 h-72 w-72 rounded-full bg-gradient-to-r from-blue-400/18 to-purple-400/18 blur-[90px]" />
+        <div className="blob-float blob-delay absolute right-10 top-8 h-80 w-80 rounded-full bg-gradient-to-r from-blue-500/18 to-purple-500/18 blur-[100px]" />
       </div>
 
       <div className="mx-auto max-w-6xl">
-        <p className="text-xs font-semibold tracking-[0.28em] text-cyan-300/80">CLIENT TESTIMONIALS</p>
-        <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-white sm:text-6xl">What Our Clients Say</h1>
-        <p className="mt-5 max-w-3xl text-gray-300 sm:text-lg">
+        <p className="text-xs font-semibold tracking-[0.28em] text-blue-600/80">CLIENT TESTIMONIALS</p>
+        <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">What Our Clients Say</h1>
+        <p className="mt-5 max-w-3xl text-slate-600 sm:text-lg">
           Don&apos;t just take our word for it — here&apos;s what the businesses we&apos;ve partnered with have to say about working
           with DemarkTech.
         </p>
@@ -58,18 +58,18 @@ export default function ClientsPage() {
           {testimonials.map((item) => (
             <article
               key={item.name}
-              className="rounded-2xl border border-cyan-300/20 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-[0_12px_40px_rgba(6,182,212,0.18)]"
+              className="rounded-2xl border border-blue-300/20 bg-white/80 p-6 backdrop-blur-sm shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:shadow-[0_12px_40px_rgba(59,130,246,0.18)]"
             >
-              <p className="text-xs tracking-widest text-cyan-300">{item.stars}</p>
-              <p className="mt-4 text-sm leading-7 text-gray-300">{item.quote}</p>
+              <p className="text-xs tracking-widest text-blue-600">{item.stars}</p>
+              <p className="mt-4 text-sm leading-7 text-slate-600">{item.quote}</p>
 
-              <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-4">
+              <div className="mt-6 flex items-center gap-3 border-t border-slate-200/50 pt-4">
                 <div className={`grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br ${item.avatarColor} text-xs font-semibold text-white`}>
                   {item.initials}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-white">{item.name}</p>
-                  <p className="text-xs text-gray-400">{item.role}</p>
+                  <p className="text-sm font-semibold text-slate-900">{item.name}</p>
+                  <p className="text-xs text-slate-500">{item.role}</p>
                 </div>
               </div>
             </article>

@@ -10,7 +10,7 @@ export default function ClientLogoMarquee() {
   const doubled = [...logos, ...logos];
 
   return (
-    <div className="relative w-full bg-[#050a27] py-8 sm:py-4 -mt-12">
+    <div className="relative mx-auto max-w-7xl bg-gradient-to-r from-white via-slate-50 to-white py-8 sm:py-4 -mt-12 border-y border-slate-200/50 rounded-xl">
      
       <div className="overflow-hidden px-4">
         <div className="animate-marquee flex w-max gap-12 sm:gap-16">
@@ -19,7 +19,7 @@ export default function ClientLogoMarquee() {
               key={`${logo}-${i}`}
               src={logo}
               alt=""
-              className="h-8 w-auto object-contain opacity-70 grayscale transition hover:opacity-100 sm:h-10"
+              className="h-8 w-auto object-contain opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0 sm:h-10"
               loading="lazy"
             />
           ))}

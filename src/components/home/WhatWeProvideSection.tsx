@@ -60,18 +60,18 @@ function ServiceCard({
       tabIndex={0}
       aria-label={title}
       className={[
-        "group relative block cursor-default overflow-hidden rounded-2xl border border-cyan-300/30 bg-[linear-gradient(180deg,#0b2a6a_0%,#050811_55%,#03050d_100%)]",
-        "shadow-[0_10px_40px_rgba(0,0,0,0.55)]",
-        "transition-all duration-300 ease-out hover:-translate-y-1 hover:border-cyan-300/55 hover:shadow-[0_18px_60px_rgba(0,0,0,0.7)]",
-        "outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60",
+        "group relative block cursor-default overflow-hidden rounded-2xl border border-blue-300/30 bg-gradient-to-br from-white to-blue-50/50",
+        "shadow-[0_10px_40px_rgba(0,0,0,0.1)]",
+        "transition-all duration-300 ease-out hover:-translate-y-1 hover:border-blue-300/55 hover:shadow-[0_18px_60px_rgba(0,0,0,0.15)]",
+        "outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60",
       ].join(" ")}
     >
       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <div className="absolute -inset-8 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_55%)]" />
+        <div className="absolute -inset-8 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.08),transparent_55%)]" />
       </div>
 
       <div className="absolute left-0 top-0 z-20 h-[2px] w-full overflow-hidden">
-        <div className="top-border-scan h-full w-[70%] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="top-border-scan h-full w-[70%] bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </div>
 
       {customLayout ? (
@@ -110,15 +110,15 @@ function ServiceCard({
               contentMinHeightClass ?? "min-h-[280px] sm:min-h-[400px]"
             } flex-col ${contentAlign === "bottom" ? "justify-end pb-8 sm:pb-10" : contentJustify}`}
           >
-            <h3 className="text-lg font-semibold text-white">{title}</h3>
-            {description ? <p className="mt-3 max-w-md text-sm leading-6 text-gray-300">{description}</p> : null}
-            <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan-300 transition group-hover:text-cyan-200">
+            <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
+            {description ? <p className="mt-3 max-w-md text-sm leading-6 text-slate-600">{description}</p> : null}
+            <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-blue-600 transition group-hover:text-blue-700">
               Learn more <span aria-hidden="true">→</span>
             </span>
           </div>
 
           {!imageUrl && !isLarge ? (
-            <div className="pointer-events-none absolute right-6 top-6 hidden h-20 w-20 rounded-2xl bg-cyan-400/10 blur-[1px] md:block" />
+            <div className="pointer-events-none absolute right-6 top-6 hidden h-20 w-20 rounded-2xl bg-blue-400/10 blur-[1px] md:block" />
           ) : null}
         </div>
       )}
@@ -129,8 +129,8 @@ function ServiceCard({
 export default function WhatWeProvideSection() {
   return (
     <section id="services" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-      <h2 className="text-center text-2xl font-semibold sm:text-3xl">What we provide</h2>
-      <p className="mx-auto mt-4 max-w-3xl px-2 text-center text-sm leading-relaxed text-gray-300 sm:text-base">
+      <h2 className="text-center text-2xl font-semibold text-slate-900 sm:text-3xl">What we provide</h2>
+      <p className="mx-auto mt-4 max-w-3xl px-2 text-center text-sm leading-relaxed text-slate-600 sm:text-base">
         Strategy, engineering, design, and growth — stitched together so your digital presence works as one system.
       </p>
 
@@ -153,7 +153,7 @@ export default function WhatWeProvideSection() {
             contentAlign="bottom"
             className="pb-1"
             imageUrl="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
-            overlayStyle="bg-[linear-gradient(to_bottom,rgba(3,8,20,0.15),rgba(3,8,20,0.9))]"
+            overlayStyle="bg-[linear-gradient(to_bottom,rgba(255,255,255,0.15),rgba(255,255,255,0.9))]"
           />
         </div>
 
@@ -166,7 +166,7 @@ export default function WhatWeProvideSection() {
           bodyMinHeightClass="min-h-[280px] sm:min-h-[350px]"
           contentMinHeightClass="min-h-0"
           imageUrl="https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=1200&q=80"
-          overlayStyle="bg-[linear-gradient(to_top,rgba(3,8,20,0.12),rgba(3,8,20,0.92))]"
+          overlayStyle="bg-[linear-gradient(to_top,rgba(255,255,255,0.12),rgba(255,255,255,0.92))]"
         />
 
         <ServiceCard
@@ -179,12 +179,12 @@ export default function WhatWeProvideSection() {
                 alt="Design workspace"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/45" />
+              <div className="absolute inset-0 bg-white/30" />
               <div className="relative flex min-h-[260px] items-end justify-center pb-5 sm:min-h-[320px] sm:pb-6">
-                <div className="w-[92%] rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-md sm:w-[85%] sm:p-5">
-                  <h3 className="font-semibold text-white">{cards.graphics.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-200">{cards.graphics.desc}</p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-cyan-300">
+                <div className="w-[92%] rounded-2xl border border-slate-200/30 bg-white/80 p-4 backdrop-blur-md sm:w-[85%] sm:p-5">
+                  <h3 className="font-semibold text-slate-900">{cards.graphics.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{cards.graphics.desc}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blue-600">
                     Learn more <span aria-hidden="true">→</span>
                   </span>
                 </div>
@@ -198,15 +198,17 @@ export default function WhatWeProvideSection() {
           description={cards.marketing.desc}
           customLayout={
             <div className="relative overflow-hidden sm:min-h-[350px] flex flex-col">
-              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(3,8,20,0.25),rgba(3,8,20,0.92))]" />
-              <div className="pointer-events-none absolute left-1/2 top-6 h-20 w-48 -translate-x-1/2 rounded-full bg-cyan-400/12 blur-[34px] sm:h-24 sm:w-72" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.25),rgba(255,255,255,0.92))]" />
+              <div className="pointer-events-none absolute left-1/2 top-6 h-20 w-48 -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-400/12 to-purple-400/12 blur-[34px] sm:h-24 sm:w-72" />
               <div className="relative flex flex-1 flex-col px-4 pt-4 sm:px-6">
                 <div>
-                  <p className="text-lg font-semibold text-gray-200 sm:text-xl">Digital growth trajectory</p>
-                  <p className="mt-2 text-6xl font-extrabold leading-none tracking-tight text-cyan-300 sm:text-8xl">100%</p>
+                  <p className="text-lg font-semibold text-slate-700 sm:text-xl">Digital growth trajectory</p>
+                  <p className="mt-2 text-6xl font-extrabold leading-none tracking-tight bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent sm:text-8xl">
+                    100%
+                  </p>
                 </div>
-                <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 border-t border-white/10 px-4 py-3 sm:px-6 sm:py-7 bg-black/40 backdrop-blur-md">
-                  <p className="max-w-[70%] text-xs leading-relaxed text-gray-300 sm:text-sm sm:leading-6">
+                <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 border-t border-slate-200/30 px-4 py-3 sm:px-6 sm:py-7 bg-white/80 backdrop-blur-md">
+                  <p className="max-w-[70%] text-xs leading-relaxed text-slate-600 sm:text-sm sm:leading-6">
                     We design the core infrastructure for the data-driven future.
                   </p>
                   <div className="flex shrink-0 -space-x-2 sm:-space-x-3" aria-hidden="true">
@@ -215,7 +217,7 @@ export default function WhatWeProvideSection() {
                         key={img}
                         src={`https://i.pravatar.cc/48?img=${img}`}
                         alt=""
-                        className="h-8 w-8 rounded-full border-2 border-[#050811] sm:h-9 sm:w-9"
+                        className="h-8 w-8 rounded-full border-2 border-white sm:h-9 sm:w-9"
                       />
                     ))}
                   </div>

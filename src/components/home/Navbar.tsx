@@ -34,8 +34,8 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
   const navBtnClass = (label: NavLabel) =>
     `min-h-[44px] shrink-0 cursor-pointer rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-300 ${
       activeNav === label
-        ? "border border-cyan-300/60 bg-cyan-400/20 text-cyan-200 shadow-[0_0_18px_rgba(34,211,238,0.35)]"
-        : "border border-transparent text-white/90 hover:border-cyan-300/40 hover:bg-cyan-400/15 hover:text-cyan-200"
+        ? "border border-blue-500/60 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-900 shadow-[0_0_18px_rgba(59,130,246,0.35)]"
+        : "border border-transparent text-slate-700 hover:border-blue-500/40 hover:bg-gradient-to-r hover:from-blue-500/15 hover:to-purple-500/15 hover:text-blue-900"
     }`;
 
   return (
@@ -46,20 +46,24 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
     >
       <nav
         aria-label="Primary"
-        className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2 sm:px-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-0 sm:px-6 lg:px-8 bg-white/80 backdrop-blur-lg rounded-xl mt-0 shadow-lg"
       >
-        <button
-          type="button"
-          onClick={() => {
-            setMobileOpen(false);
-            onNavClick("HOME");
-          }}
-          className="flex min-h-[44px] min-w-[44px] items-center rounded-lg outline-none ring-cyan-400/50 focus-visible:ring-2"
-          aria-label="GitLayer — Home"
-        >
-          <img src={LOGO_SRC} alt="" className="h-16 w-auto object-contain sm:h-18 md:h-28" />
-          <span className="sr-only">GitLayer</span>
-        </button>
+        <a
+  href="/"
+  onClick={(e) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    onNavClick("HOME");
+  }}
+  className="flex min-h-[44px] min-w-[44px] items-center rounded-lg outline-none ring-blue-500/50 focus-visible:ring-2"
+>
+  <img
+    src={LOGO_SRC}
+    alt="DemarkTech Logo"
+    className="h-16 w-auto object-contain sm:h-18 md:h-28"
+  />
+  <span className="sr-only">DemarkTech</span>
+</a>
 
         <div className="hidden flex-wrap items-center justify-end gap-2 md:flex lg:gap-3">
           <button type="button" onClick={() => onNavClick("HOME")} className={navBtnClass("HOME")}>
@@ -79,7 +83,7 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
             <div
               role="menu"
               aria-hidden={!servicesOpen}
-              className={`absolute left-0 top-full z-20 mt-2 w-56 rounded-lg border border-slate-200/10 bg-white p-2 text-left text-[12px] text-slate-900 shadow-xl transition duration-150 ${
+              className={`absolute left-0 top-full z-20 mt-2 w-56 rounded-lg border border-slate-200/30 bg-white/95 backdrop-blur-lg p-2 text-left text-[12px] text-slate-900 shadow-xl transition duration-150 ${
                 servicesOpen ? "visible translate-y-0 opacity-100" : "invisible translate-y-1 opacity-0"
               }`}
             >
@@ -88,7 +92,7 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
                   key={item}
                   type="button"
                   role="menuitem"
-                  className="block w-full rounded-md px-3 py-2.5 text-left hover:bg-slate-100"
+                  className="block w-full rounded-md px-3 py-2.5 text-left hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-900 transition-colors"
                   onClick={() => {
                     setServicesOpen(false);
                     onNavClick("OUR SERVICES");
@@ -111,7 +115,7 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
           <button
             type="button"
             onClick={() => onNavClick("CONTACT")}
-            className="rounded-xl bg-cyan-400 px-6 py-2.5 text-sm font-semibold text-[#032341] transition hover:brightness-110"
+            className="rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105"
           >
             Get in Touch
           </button>
@@ -122,7 +126,7 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"
           onClick={() => setMobileOpen((p) => !p)}
-          className="min-h-[44px] rounded-lg border border-white/15 px-4 py-2 text-sm font-medium text-white md:hidden"
+          className="min-h-[44px] rounded-lg border border-slate-300/50 bg-white/80 backdrop-blur-lg px-4 py-2 text-sm font-medium text-slate-700 hover:border-blue-500/50 hover:bg-blue-50 transition-colors md:hidden"
         >
           {mobileOpen ? "Close" : "Menu"}
         </button>
@@ -131,7 +135,7 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
       {mobileOpen ? (
         <div
           id="mobile-nav"
-          className="mx-4 mb-4 max-h-[min(70vh,520px)] overflow-y-auto rounded-xl border border-white/10 bg-[#05123f]/95 px-4 py-4 shadow-2xl backdrop-blur-md md:hidden"
+          className="mx-4 mb-4 max-h-[min(70vh,520px)] overflow-y-auto rounded-xl border border-slate-200/30 bg-white/95 backdrop-blur-lg px-4 py-4 shadow-2xl md:hidden"
         >
           <div className="flex flex-col gap-1">
             {MOBILE_NAV_ITEMS.map((item) => (
@@ -142,7 +146,7 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
                   setMobileOpen(false);
                   onNavClick(item);
                 }}
-                className="min-h-[48px] rounded-lg px-3 py-3 text-left text-base text-gray-200 transition hover:bg-white/10 hover:text-white"
+                className="min-h-[48px] rounded-lg px-3 py-3 text-left text-base text-slate-700 transition hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-900"
               >
                 {NAV_DISPLAY[item]}
               </button>

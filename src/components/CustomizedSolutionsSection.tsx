@@ -77,48 +77,48 @@ function FeatureCard({ solution }: { solution: Solution }) {
 
   return (
     <article
-      className="group relative min-h-[320px] overflow-hidden rounded-2xl border border-white/10 bg-[#0b0f14] p-10 backdrop-blur-sm transition-all duration-300 ease-out hover:scale-[1.03]"
+      className="group relative min-h-[320px] overflow-hidden rounded-2xl border border-slate-200/50 bg-white p-10 backdrop-blur-sm transition-all duration-300 ease-out hover:scale-[1.03] shadow-md"
     >
       <div className="pointer-events-none absolute inset-0 rounded-2xl">
         <div className="absolute left-0 top-0 h-[2px] w-full overflow-hidden">
-          <div className="animate-[shine_3s_linear_infinite] h-full w-1/2 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+          <div className="animate-[shine_3s_linear_infinite] h-full w-1/2 bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
         </div>
         <div className="absolute right-0 top-0 h-full w-[2px] overflow-hidden">
-          <div className="animate-[shineVertical_3s_linear_infinite] h-1/2 w-full bg-gradient-to-b from-transparent via-cyan-400 to-transparent" />
+          <div className="animate-[shineVertical_3s_linear_infinite] h-1/2 w-full bg-gradient-to-b from-transparent via-purple-400 to-transparent" />
         </div>
         <div className="absolute bottom-0 right-0 h-[2px] w-full overflow-hidden">
-          <div className="animate-[shine_3s_linear_infinite] h-full w-1/2 bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
+          <div className="animate-[shine_3s_linear_infinite] h-full w-1/2 bg-gradient-to-r from-transparent via-purple-400 to-transparent" />
         </div>
         <div className="absolute left-0 top-0 h-full w-[2px] overflow-hidden">
           <div className="animate-[shineVertical_3s_linear_infinite] h-1/2 w-full bg-gradient-to-b from-transparent via-blue-400 to-transparent" />
         </div>
       </div>
-      <div className="pointer-events-none absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-cyan-400/0 to-blue-500/0 opacity-0 blur-sm transition-opacity duration-300 group-hover:from-cyan-400/20 group-hover:to-blue-500/20 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-blue-400/0 to-purple-500/0 opacity-0 blur-sm transition-opacity duration-300 group-hover:from-blue-400/20 group-hover:to-purple-500/20 group-hover:opacity-100" />
 
       <div className="relative">
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400">
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-600">
           {solution.icon}
         </span>
 
         <div
-          className="relative mt-5 overflow-hidden rounded-xl bg-white/5 p-5 transition-colors duration-300 group-hover:bg-white/10"
+          className="relative mt-5 overflow-hidden rounded-xl bg-slate-50/80 p-5 transition-colors duration-300 group-hover:bg-slate-100/90"
           onMouseMove={(event) => {
             const rect = event.currentTarget.getBoundingClientRect();
             setLightPosition({ x: event.clientX - rect.left, y: event.clientY - rect.top });
           }}
         >
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-cyan-500/10 to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent" />
           <div
             className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             style={{
-              background: `radial-gradient(180px circle at ${lightPosition.x}px ${lightPosition.y}px, rgba(56,189,248,0.12), transparent 70%)`,
+              background: `radial-gradient(180px circle at ${lightPosition.x}px ${lightPosition.y}px, rgba(59,130,246,0.12), transparent 70%)`,
             }}
           />
 
           <div className="relative">
-            <h3 className="text-xl font-semibold text-white">{solution.title}</h3>
-            <p className="mt-4 text-base leading-7 text-gray-400">{solution.description}</p>
-            <button className="mt-5 text-sm font-medium text-cyan-400 transition-colors duration-300 hover:text-cyan-300">
+            <h3 className="text-xl font-semibold text-slate-900">{solution.title}</h3>
+            <p className="mt-4 text-base leading-7 text-slate-600">{solution.description}</p>
+            <button className="mt-5 text-sm font-medium text-blue-600 transition-colors duration-300 hover:text-blue-700">
               Get Started Now →
             </button>
           </div>
@@ -132,8 +132,8 @@ export default function CustomizedSolutionsSection() {
   return (
     <section id="solutions" className="mx-auto max-w-7xl px-6 py-24">
       <div className="mx-auto">
-        <h2 className="text-center text-3xl font-semibold text-white sm:text-4xl">Our Customized Solutions</h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-gray-400">
+        <h2 className="text-center text-3xl font-semibold text-slate-900 sm:text-4xl">Our Customized Solutions</h2>
+        <p className="mx-auto mt-4 max-w-3xl text-center text-slate-600">
           Premium digital services designed to improve speed, visibility, and business outcomes at every stage.
         </p>
 

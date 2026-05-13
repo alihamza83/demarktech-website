@@ -117,9 +117,9 @@ export default function App() {
 
   return (
     <main
-      className={`min-h-screen text-white selection:bg-cyan-500/40 ${
+      className={`min-h-screen selection:bg-blue-500/40 ${
         activePage !== "home"
-          ? "bg-[radial-gradient(circle_at_50%_0%,#08113f_0%,#050a27_45%,#030613_100%)]"
+          ? "bg-gradient-to-br from-white via-slate-50 to-blue-50/50"
           : "bg-transparent"
       }`}
     >
@@ -136,7 +136,7 @@ export default function App() {
         <>
           <Hero onOpenContact={openContactSection} />
 
-          <div className="bg-[#050a27]">
+          <div className="bg-gradient-to-b from-white to-slate-50/80">
             <div className="mt-8 sm:mt-12">
               <ClientLogoMarquee />
             </div>
