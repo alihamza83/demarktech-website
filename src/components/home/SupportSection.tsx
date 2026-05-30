@@ -1,11 +1,9 @@
-type SupportSectionProps = {
-  onOpenContact: () => void;
-};
 
-export default function SupportSection({ onOpenContact }: SupportSectionProps) {
+
+export default function SupportSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-      <div className="relative overflow-hidden rounded-2xl border border-blue-300/25 bg-gradient-to-br from-white to-blue-50/50 p-6 sm:p-8 md:p-10">
+      <div className="relative overflow-hidden rounded-2xl border border-blue-500/25 bg-gradient-to-br from-white to-blue-200/50 p-6 sm:p-8 md:p-10">
         <div className="pointer-events-none absolute inset-0 opacity-90">
           <div className="absolute -right-20 -top-28 h-[140%] w-[75%] rounded-[50%] border border-blue-400/40 shadow-[0_0_30px_rgba(59,130,246,0.25)]" />
           <div className="absolute -right-24 -top-24 h-[140%] w-[75%] rounded-[50%] border border border-purple-400/40 shadow-[0_0_30px_rgba(124,58,237,0.25)]" />
@@ -44,13 +42,13 @@ export default function SupportSection({ onOpenContact }: SupportSectionProps) {
             </li>
           </ul>
           <button
-            type="button"
-            onClick={onOpenContact}
-            className="mt-8 inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 sm:px-7"
-          >
-            Start a conversation
-            <span aria-hidden="true">→</span>
-          </button>
+  type="button"
+  onClick={() => window.open("https://wa.me/923001234567", "_blank")}
+  className="mt-8 inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 sm:px-7"
+>
+  WhatsApp
+  <span aria-hidden="true">💬</span>
+</button>
         </div>
       </div>
     </section>

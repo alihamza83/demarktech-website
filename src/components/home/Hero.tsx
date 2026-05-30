@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useAnimatedCounter } from "../../hooks/useAnimatedCounter";
-import ShineFrame from "./ShineFrame";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
@@ -18,9 +17,9 @@ export default function Hero({ onOpenContact }: HeroProps) {
   return (
     <section id="home" className="relative overflow-hidden pt-28 sm:pt-32 lg:pt- ">
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#6d28d9]" />  
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 via-transparent to-purple-100/20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-white/80" />
         <div className="absolute left-1/2 top-14 h-[18rem] w-[18rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-[120px] sm:h-[24rem] sm:w-[24rem] md:h-[28rem] md:w-[28rem]" />
         <div className="absolute left-4 top-40 h-48 w-48 rounded-full bg-gradient-to-r from-blue-300/15 to-purple-300/15 blur-[120px] sm:left-8 sm:h-72 sm:w-72 sm:top-52" />
         <div className="absolute bottom-14 right-4 h-48 w-48 rounded-full bg-gradient-to-r from-purple-300/12 to-blue-300/12 blur-[120px] sm:right-10 sm:h-72 sm:w-72" />
@@ -32,7 +31,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
             <span className="block">We build</span>
             <span className="block">brands that</span>
             <span className="block pt-1">
-              <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(59,130,246,0.35)]">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-300 to-blue-300 bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(59,130,246,0.35)]">
                 Dominate
               </span>{" "}
               <span className="text-slate-900">the</span>
@@ -40,7 +39,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
             <span className="block pt-1 text-slate-900">digital world</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-900 sm:text-lg">
             DeMarkTech is a full-service marketing agency helping B2B companies, B2C brands, startups, and new businesses grow faster through smart strategy, creative execution, and data-driven results.
           </p>
 
@@ -74,77 +73,78 @@ export default function Hero({ onOpenContact }: HeroProps) {
               ))}
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-sm text-slate-600">Trusted by teams shipping real products</p>
+              <p className="text-sm text-slate-900">Trusted by teams shipping real products</p>
               <p className="mt-1 flex flex-wrap items-center gap-2 text-sm text-blue-600">
                 <span aria-hidden="true">★★★★★</span>
                 <span className="font-medium text-slate-900">4.9</span>
-                <span className="text-slate-500">average partner rating</span>
+                <span className="text-slate-700">average partner rating</span>
               </p>
             </div>
           </div>
         </motion.div>
 
         <motion.div
-          className="flex w-full flex-col items-center justify-center gap-6 sm:gap-8 lg:items-end"
+          className="flex w-full items-center justify-center lg:items-end lg:justify-end"
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="grid w-full max-w-lg grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:max-w-none sm:gap-5 lg:max-w-none">
-            <div className="flex flex-col gap-4">
-              <div className="relative flex min-h-[22rem] flex-col justify-between overflow-hidden rounded-[22px] border border-blue-300/40 bg-gradient-to-br from-[#EEF7FF] via-[#F3EEFF] to-[#F9F3FF] p-0 sm:min-h-[24rem] sm:rounded-[26px] sm:p-0 md:h-[456px]">
-                <ShineFrame />
-                <div className="relative pt-8 text-center sm:pt-10">
-                  <p className="text-5xl font-extrabold leading-none sm:text-6xl">
+          <div className="relative w-full max-w-md perspective-1000">
+            <motion.div
+              className="relative w-full rounded-3xl border border-blue-400/30 bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90 p-8 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_0_40px_rgba(59,130,246,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-xl"
+              initial={{ rotateY: -5, rotateX: 5 }}
+              whileHover={{ 
+                rotateY: 0, 
+                rotateX: 0,
+                y: -10,
+                scale: 1.02,
+                transition: { duration: 0.4, ease: "easeOut" }
+              }}
+              style={{
+                transformStyle: "preserve-3d",
+                transform: "rotateY(-5deg) rotateX(5deg)"
+              }}
+            >
+              {/* Animated background glow */}
+              <div className="absolute inset-0 overflow-hidden rounded-3xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-blue-500/20 animate-pulse" />
+                <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-gradient-to-r from-blue-400/30 to-purple-400/30 blur-3xl animate-float" />
+                <div className="absolute -bottom-20 -left-20 h-40 w-40 rounded-full bg-gradient-to-r from-purple-400/30 to-blue-400/30 blur-3xl animate-float-delay" />
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10 flex flex-col items-center text-center">
+                <div className="mb-6">
+                  <p className="text-7xl font-extrabold leading-none bg-gradient-to-r from-blue-400 via-purple-300 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(59,130,246,0.5)] sm:text-8xl">
                     {projectsCount}
-                    <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                      +
-                   </span>
-                  </p>
-                  <p className="mt-4 text-base font-semibold leading-relaxed text-slate-900 sm:text-[18px]">
-                    Projects, countless
-                    <br />
-                    successes
+                    <span className="text-5xl sm:text-6xl">+</span>
                   </p>
                 </div>
-                <div className="h-36 sm:h-[180px] overflow-hidden rounded-[18px] sm:rounded-[22px]">
-             
-             </div>
-              </div>
 
-              <div className="relative flex min-h-[72px] items-center justify-center overflow-hidden rounded-[20px] border border-blue-300/40 bg-gradient-to-br from-[#EEF7FF] via-[#F3EEFF] to-[#F9F3FF] text-center sm:min-h-[82px] sm:rounded-[22px]">
-                <ShineFrame roundedClass="rounded-[20px] sm:rounded-[22px]" />
-                <p className="relative z-10 px-2 text-base font-bold tracking-tight text-slate-900 sm:text-[20px]">
-                  100% digital excellence
+                <h3 className="text-xl font-bold text-white mb-4 sm:text-2xl">
+                  Projects Delivered
+                </h3>
+
+                <div className="flex flex-wrap justify-center gap-4 mb-6">
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30">
+                    <span className="text-2xl font-bold text-cyan-300">{years}+</span>
+                    <span className="text-sm text-cyan-200">Years Experience</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-400/30">
+                    <span className="text-2xl font-bold text-purple-300">100%</span>
+                    <span className="text-sm text-purple-200">Excellence</span>
+                  </div>
+                </div>
+
+                <p className="text-sm text-cyan-100/80 leading-relaxed max-w-xs">
+                  Countless successes across industries, delivering premium digital solutions that drive real results.
                 </p>
               </div>
-            </div>
 
-            <div className="flex flex-col gap-4">
-              <div className="relative h-full w-full overflow-hidden rounded-[18px] border border-blue-300/40 sm:rounded-[20px]">
-               <img
-                src="/hero2.png"
-                alt=""
-                   className="absolute inset-0 h-full w-full object-cover"
-                  />
-               <div className="absolute inset-0 bg-gradient-to-t from-blue-400/10 to-transparent" />
-             </div>
-
-              <div className="relative flex min-h-[11rem] w-full flex-col items-center justify-center overflow-hidden rounded-[22px] border border-blue-300/40 bg-gradient-to-br from-[#F5FBFF] via-[#F3F0FF] to-[#FAF5FF] px-4 py-6 text-center sm:min-h-[170px] sm:rounded-[26px] md:max-w-[300px] md:justify-self-end">
-                <ShineFrame />
-                <p className="relative z-10 text-5xl font-extrabold leading-none sm:text-6xl">
-                  {years}
-                  <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                    +
-                  </span>
-                </p>
-                <p className="relative z-10 mt-3 text-base font-semibold leading-relaxed text-slate-900 sm:text-[18px]">
-                  Years of combined
-                  <br />
-                  team experience
-                </p>
-              </div>
-            </div>
+              {/* 3D depth effect layers */}
+              <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none" />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
+            </motion.div>
           </div>
         </motion.div>
       </div>

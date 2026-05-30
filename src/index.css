@@ -7,7 +7,7 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 35%, #EEF2FF 70%, #F5F3FF 100%);
+  background: transparent;
   color: #1e293b;
   font-family: 'Sora', sans-serif;
 }
@@ -166,4 +166,23 @@ body {
   top: 0;
   right: 0;
   animation-delay: 2.4s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(10px, -10px) scale(1.1);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 3s;
 }

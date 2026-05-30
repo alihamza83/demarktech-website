@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { NavLabel } from "../../types/navigation";
 import { MOBILE_NAV_ITEMS, NAV_DISPLAY, SERVICES_DROPDOWN } from "../../types/navigation";
 
-const LOGO_SRC = "/denmarklogo.png";
+const LOGO_SRC = "/lastlogo.png";
 
 const DESKTOP_PAGES: { label: NavLabel; text: string }[] = [
   { label: "ABOUT US", text: "ABOUT US" },
@@ -20,6 +20,8 @@ type NavbarProps = {
 export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const servicesWrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -31,11 +33,20 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
     return () => document.removeEventListener("mousedown", onDoc);
   }, [servicesOpen]);
 
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 50);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const navBtnClass = (label: NavLabel) =>
     `min-h-[44px] shrink-0 cursor-pointer rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-300 ${
       activeNav === label
-        ? "border border-blue-500/60 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-900 shadow-[0_0_18px_rgba(59,130,246,0.35)]"
-        : "border border-transparent text-slate-700 hover:border-blue-500/40 hover:bg-gradient-to-r hover:from-blue-500/15 hover:to-purple-500/15 hover:text-blue-900"
+        ? "border border-blue-500/60 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-cyan-300  shadow-[0_0_18px_rgba(59,130,246,0.35)]"
+        : "border border-transparent text-cyan-200  hover:border-blue-500/40 hover:bg-gradient-to-r hover:from-blue-500/15 hover:to-purple-500/15 hover:text-cyan-300"
     }`;
 
   return (
@@ -46,7 +57,11 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
     >
       <nav
         aria-label="Primary"
-        className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-0 sm:px-6 lg:px-8 bg-white/80 backdrop-blur-lg rounded-xl mt-0 shadow-lg"
+        className={`mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-0 sm:px-6 lg:px-8 rounded-xl mt-0 shadow-lg transition-all duration-300 ${
+          isScrolled
+            ? "bg-slate-900/90 backdrop-blur-xl border border-blue-500/20"
+            : "bg-slate-500/10 backdrop-blur-lg"
+        }`}
       >
         <a
   href="/"
@@ -83,22 +98,22 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
             <div
               role="menu"
               aria-hidden={!servicesOpen}
-              className={`absolute left-0 top-full z-20 mt-2 w-56 rounded-lg border border-slate-200/30 bg-white/95 backdrop-blur-lg p-2 text-left text-[12px] text-slate-900 shadow-xl transition duration-150 ${
-                servicesOpen ? "visible translate-y-0 opacity-100" : "invisible translate-y-1 opacity-0"
+              className={`absolute left-0 top-full z-20 mt-2 w-56 rounded-xl border border-blue-500/30 bg-slate-900/75 backdrop-blur-xl p-2 text-left text-[12px] shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_20px_rgba(0,174,239,0.15)] transition-all duration-300 ${
+                servicesOpen ? "visible translate-y-0 opacity-100" : "invisible translate-y-2 opacity-0"
               }`}
             >
               {SERVICES_DROPDOWN.map((item) => (
                 <button
-                  key={item}
+                  key={item.label}
                   type="button"
                   role="menuitem"
-                  className="block w-full rounded-md px-3 py-2.5 text-left hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-900 transition-colors"
+                  className="block w-full cursor-pointer rounded-lg px-3 py-2.5 text-left text-cyan-200 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(0,174,239,0.3)] hover:border hover:border-blue-400/30"
                   onClick={() => {
                     setServicesOpen(false);
-                    onNavClick("OUR SERVICES");
+                    onNavClick(item.label);
                   }}
                 >
-                  {item}
+                  <span className="font-medium tracking-wide">{item.text}</span>
                 </button>
               ))}
             </div>
@@ -126,30 +141,71 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"
           onClick={() => setMobileOpen((p) => !p)}
-          className="min-h-[44px] rounded-lg border border-slate-300/50 bg-white/80 backdrop-blur-lg px-4 py-2 text-sm font-medium text-slate-700 hover:border-blue-500/50 hover:bg-blue-50 transition-colors md:hidden"
+          className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg bg-transparent transition-all duration-300 hover:scale-110 active:scale-95 md:hidden"
         >
-          {mobileOpen ? "Close" : "Menu"}
+          <div className="flex flex-col gap-1.5">
+            <span className="block w-6 h-0.5 rounded-full bg-gradient-to-r from-blue-500 to-purple-500" />
+            <span className="block w-6 h-0.5 rounded-full bg-gradient-to-r from-blue-500 to-purple-500" />
+            <span className="block w-6 h-0.5 rounded-full bg-gradient-to-r from-blue-500 to-purple-500" />
+          </div>
         </button>
       </nav>
 
       {mobileOpen ? (
         <div
           id="mobile-nav"
-          className="mx-4 mb-4 max-h-[min(70vh,520px)] overflow-y-auto rounded-xl border border-slate-200/30 bg-white/95 backdrop-blur-lg px-4 py-4 shadow-2xl md:hidden"
+          className="mx-4 mb-4 max-h-[min(70vh,520px)] overflow-y-auto rounded-xl border border-blue-500/30 bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90 backdrop-blur-xl px-4 py-4 shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_20px_rgba(0,174,239,0.15)] md:hidden"
         >
           <div className="flex flex-col gap-1">
             {MOBILE_NAV_ITEMS.map((item) => (
-              <button
-                key={item}
-                type="button"
-                onClick={() => {
-                  setMobileOpen(false);
-                  onNavClick(item);
-                }}
-                className="min-h-[48px] rounded-lg px-3 py-3 text-left text-base text-slate-700 transition hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-900"
-              >
-                {NAV_DISPLAY[item]}
-              </button>
+              item === "OUR SERVICES" ? (
+                <div key={item}>
+                  <button
+                    type="button"
+                    onClick={() => setMobileServicesOpen((p) => !p)}
+                    className="min-h-[48px] w-full cursor-pointer rounded-lg px-3 py-3 text-left text-base text-cyan-200 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 hover:text-cyan-300 hover:shadow-[0_4px_12px_rgba(59,130,246,0.15)] flex items-center justify-between"
+                  >
+                    <span className="font-semibold">{NAV_DISPLAY[item]}</span>
+                    <span className={`transition-transform duration-300 text-blue-400 ${mobileServicesOpen ? 'rotate-180' : ''}`}>
+                      ▼
+                    </span>
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      mobileServicesOpen ? 'max-h-96 opacity-100 mt-2' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="flex flex-col gap-1 pl-4 border-l-2 border-blue-500/40 ml-3 rounded-r-lg bg-slate-900/50 backdrop-blur-sm p-2 shadow-[0_4px_16px_rgba(0,0,0,0.3),0_0_12px_rgba(0,174,239,0.1)]">
+                      {SERVICES_DROPDOWN.map((service) => (
+                        <button
+                          key={service.label}
+                          type="button"
+                          onClick={() => {
+                            setMobileOpen(false);
+                            setMobileServicesOpen(false);
+                            onNavClick(service.label);
+                          }}
+                          className="min-h-[44px] cursor-pointer rounded-lg px-3 py-2.5 text-left text-sm text-cyan-200 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 hover:text-cyan-300 hover:shadow-[0_0_12px_rgba(0,174,239,0.25)] border border-transparent hover:border-blue-400/30"
+                        >
+                          <span className="font-medium tracking-wide">{service.text}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    onNavClick(item);
+                  }}
+                  className="min-h-[48px] cursor-pointer rounded-lg px-3 py-3 text-left text-base text-cyan-200 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 hover:text-cyan-300 hover:shadow-[0_4px_12px_rgba(59,130,246,0.15)]"
+                >
+                  <span className="font-medium">{NAV_DISPLAY[item]}</span>
+                </button>
+              )
             ))}
           </div>
         </div>

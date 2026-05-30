@@ -4,6 +4,12 @@ import ClientsPage from "./components/ClientsPage";
 import ContactSection from "./components/ContactSection";
 import CustomizedSolutionsSection from "./components/CustomizedSolutionsSection";
 import PortfolioPage from "./components/PortfolioPage";
+import WebDevelopmentPage from "./components/services/WebDevelopmentPage";
+import GraphicDesigningPage from "./components/services/GraphicDesigningPage";
+import GISSolutionPage from "./components/services/GISSolutionPage";
+import ECommerceDevelopmentPage from "./components/services/ECommerceDevelopmentPage";
+import SEOContentWritingPage from "./components/services/SEOContentWritingPage";
+import DigitalMarketingPage from "./components/services/DigitalMarketingPage";
 import ClientLogoMarquee from "./components/home/ClientLogoMarquee";
 import Footer from "./components/home/Footer";
 import Hero from "./components/home/Hero";
@@ -14,7 +20,7 @@ import WhatWeProvideSection from "./components/home/WhatWeProvideSection";
 import WhyChooseSection from "./components/home/WhyChooseSection";
 import type { NavLabel } from "./types/navigation";
 
-type Page = "home" | "contact" | "about" | "portfolio" | "clients";
+type Page = "home" | "contact" | "about" | "portfolio" | "clients" | "web-development" | "graphic-designing" | "gis-solution" | "e-commerce-development" | "seo-content-writing" | "digital-marketing";
 
 export default function App() {
   const [activePage, setActivePage] = useState<Page>("home");
@@ -57,6 +63,42 @@ export default function App() {
   const openClientsPage = () => {
     setActivePage("clients");
     setActiveNav("CLIENTS");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const openWebDevelopmentPage = () => {
+    setActivePage("web-development");
+    setActiveNav("WEB DEVELOPMENT");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const openGraphicDesigningPage = () => {
+    setActivePage("graphic-designing");
+    setActiveNav("GRAPHIC DESIGNING");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const openGISSolutionPage = () => {
+    setActivePage("gis-solution");
+    setActiveNav("GIS SOLUTION");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const openECommerceDevelopmentPage = () => {
+    setActivePage("e-commerce-development");
+    setActiveNav("E-COMMERCE DEVELOPMENT");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const openSEOContentWritingPage = () => {
+    setActivePage("seo-content-writing");
+    setActiveNav("SEO & CONTENT WRITING");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const openDigitalMarketingPage = () => {
+    setActivePage("digital-marketing");
+    setActiveNav("DIGITAL MARKETING");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -105,6 +147,12 @@ export default function App() {
     if (label === "PORTFOLIO") return openPortfolioPage();
     if (label === "CLIENTS") return openClientsPage();
     if (label === "CONTACT") return openContactSection();
+    if (label === "WEB DEVELOPMENT") return openWebDevelopmentPage();
+    if (label === "GRAPHIC DESIGNING") return openGraphicDesigningPage();
+    if (label === "GIS SOLUTION") return openGISSolutionPage();
+    if (label === "E-COMMERCE DEVELOPMENT") return openECommerceDevelopmentPage();
+    if (label === "SEO & CONTENT WRITING") return openSEOContentWritingPage();
+    if (label === "DIGITAL MARKETING") return openDigitalMarketingPage();
     if (label === "OUR SERVICES") {
       setActiveNav("OUR SERVICES");
       return navigateHomeSection("services");
@@ -117,11 +165,7 @@ export default function App() {
 
   return (
     <main
-      className={`min-h-screen selection:bg-blue-500/40 ${
-        activePage !== "home"
-          ? "bg-gradient-to-br from-white via-slate-50 to-blue-50/50"
-          : "bg-transparent"
-      }`}
+      className="min-h-screen selection:bg-blue-500/40 bg-transparent"
     >
       <Navbar onNavClick={handleNavClick} activeNav={activeNav} isVisible={isNavbarVisible} />
       {activePage === "contact" ? (
@@ -132,6 +176,18 @@ export default function App() {
         <PortfolioPage />
       ) : activePage === "clients" ? (
         <ClientsPage />
+      ) : activePage === "web-development" ? (
+        <WebDevelopmentPage />
+      ) : activePage === "graphic-designing" ? (
+        <GraphicDesigningPage />
+      ) : activePage === "gis-solution" ? (
+        <GISSolutionPage />
+      ) : activePage === "e-commerce-development" ? (
+        <ECommerceDevelopmentPage />
+      ) : activePage === "seo-content-writing" ? (
+        <SEOContentWritingPage />
+      ) : activePage === "digital-marketing" ? (
+        <DigitalMarketingPage />
       ) : (
         <>
           <Hero onOpenContact={openContactSection} />
@@ -146,7 +202,7 @@ export default function App() {
 
           <WhatWeProvideSection />
           <CustomizedSolutionsSection />
-          <SupportSection onOpenContact={openContactSection} />
+          <SupportSection />
         </>
       )}
       <Footer onNavClick={handleNavClick} />

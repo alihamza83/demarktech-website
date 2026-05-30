@@ -33,8 +33,21 @@ function Counter({ value }: { value: string }) {
 
 export default function TransformSection() {
   return (
-    <section className="border-b border-t border-slate-200/50">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section className="relative border-b border-t border-slate-900/50 overflow-hidden">
+       {/* Smooth blend from Hero */}
+  <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-white/80 to-transparent" />
+
+    {/* Base gradient */}
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-transparent to-purple-900/80" />
+
+  {/* Light overlay (IMPORTANT for Hero-like brightness) */}
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 via-transparent to-purple-100/20" />
+
+  {/* White soft fade */}
+  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white/80" />
+
+  {/* Content */}
+  <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +68,7 @@ export default function TransformSection() {
                 <p className="text-4xl font-extrabold bg-gradient-to-r from-[#00AEEF] to-[#CB6CE6] bg-clip-text text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
   <Counter value={item.value} />
 </p>
-                <p className="mt-3 text-base font-medium text-slate-700 sm:text-lg lg:text-xl">{item.label}</p>
+                <p className="mt-3 text-base font-medium text-slate-900 sm:text-lg lg:text-xl">{item.label}</p>
               </div>
             ))}
           </div>

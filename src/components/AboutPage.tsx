@@ -5,14 +5,21 @@ export default function AboutPage() {
       id="about-page"
       className="relative w-full overflow-hidden px-6 pb-20 pt-36 lg:px-8"
     >
-      {/* BACKGROUND */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/50" />
-        <div className="blob-float absolute -left-24 top-24 h-72 w-72 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-[90px]" />
-        <div className="blob-float blob-delay absolute right-10 top-8 h-80 w-80 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-[100px]" />
-      </div>
 
-      <div className="mx-auto max-w-6xl">
+  <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#6d28d9]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/50 via-transparent to-purple-900/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/80 to-white/70" />
+
+{/* CENTER SOFT GLOW */}
+<div className="absolute left-1/2 top-10 h-80 w-80 -translate-x-1/2 rounded-full bg-purple-4  00/20 blur-[120px]" />
+
+{/* RIGHT GLOW */}
+<div className="absolute right-0 top-32 h-72 w-72 rounded-full bg-purple-100/10 blur-[50px]" />
+
+</div>
+
+      <div className="relative z-10 mx-auto max-w-6xl">
 
   {/* TOP HEADING */}
   <div className="mb-12">
@@ -35,7 +42,7 @@ export default function AboutPage() {
     {/* LEFT */}
     <div className="text-left">
 
-      <div className="space-y-6 text-[15px] leading-7 text-slate-600">
+      <div className="space-y-6 text-[15px] leading-7 text-slate-900">
               <p>
                 Founded to help ambitious teams ship faster, DemarkTech blends creative craft with pragmatic delivery. We work
                 with B2B companies, consumer brands, and startups on strategies that are clear, measurable, and built to last.

@@ -10,7 +10,7 @@ export default function ClientLogoMarquee() {
   const doubled = [...logos, ...logos];
 
   return (
-    <div className="relative mx-auto max-w-7xl bg-gradient-to-r from-white via-slate-50 to-white py-8 sm:py-4 -mt-12 border-y border-slate-200/50 rounded-xl">
+    <div className="relative mx-auto max-w-7xl bg-gradient-to-r from-white via-slate-500 to-white py-8 sm:py-4 -mt-12 border-y border-slate-200/50 rounded-xl">
      
       <div className="overflow-hidden px-4">
         <div className="animate-marquee flex w-max gap-12 sm:gap-16">
