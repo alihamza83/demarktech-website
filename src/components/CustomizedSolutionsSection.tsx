@@ -1,5 +1,14 @@
 import { useState, type ReactNode } from "react";
 
+type Props = {
+  onWebDev?: () => void;
+  onSEO?: () => void;
+  onMarketing?: () => void;
+  onGraphic?: () => void;
+  onEcommerce?: () => void;
+  onGis?: () => void;
+};
+
 type Solution = {
   title: string;
   description: string;
@@ -19,7 +28,7 @@ const solutions: Solution[] = [
     ),
   },
   {
-    title: "SEO & Content Writing",
+    title: "SEO Content Optimization",
     description: "Search-optimized content that increases discoverability and converts qualified traffic.",
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -39,7 +48,7 @@ const solutions: Solution[] = [
     ),
   },
   {
-    title: "UI/UX Design",
+    title: "Graphic Designing",
     description: "Elegant user experiences crafted to reduce friction and maximize product engagement.",
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -61,7 +70,7 @@ const solutions: Solution[] = [
     ),
   },
   {
-    title: "Cloud & DevOps",
+    title: "GIS Solution",
     description: "Reliable CI/CD and infrastructure automation that scales with your product roadmap.",
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -72,7 +81,23 @@ const solutions: Solution[] = [
   },
 ];
 
-function FeatureCard({ solution }: { solution: Solution }) {
+function FeatureCard({
+  solution,
+  onWebDev,
+  onSEO,
+  onMarketing,
+  onGraphic,
+  onEcommerce,
+  onGis,
+}: {
+  solution: Solution;
+  onWebDev?: () => void;
+  onSEO?: () => void;
+  onMarketing?: () => void;
+  onGraphic?: () => void;
+  onEcommerce?: () => void;
+  onGis?: () => void;
+}) {
   const [lightPosition, setLightPosition] = useState({ x: 160, y: 90 });
 
   return (
@@ -118,9 +143,19 @@ function FeatureCard({ solution }: { solution: Solution }) {
           <div className="relative">
             <h3 className="text-xl font-semibold text-slate-900">{solution.title}</h3>
             <p className="mt-4 text-base leading-7 text-slate-600">{solution.description}</p>
-            <button className="mt-5 text-sm font-medium text-blue-600 transition-colors duration-300 hover:text-blue-700">
-              Get Started Now →
-            </button>
+            <button
+  className="mt-5 text-sm font-medium text-blue-600 transition-colors duration-300 hover:text-blue-700"
+  onClick={() => {
+  if (solution.title === "Web Development") onWebDev?.();
+  if (solution.title === "SEO Content Optimization") onSEO?.();
+  if (solution.title === "Digital Marketing") onMarketing?.();
+  if (solution.title === "Graphic Designing") onGraphic?.();
+  if (solution.title === "E-Commerce Solutions") onEcommerce?.();
+  if (solution.title === "GIS Solution") onGis?.();
+}}
+>
+  Get Started Now →
+</button>
           </div>
         </div>
       </div>
@@ -128,18 +163,37 @@ function FeatureCard({ solution }: { solution: Solution }) {
   );
 }
 
-export default function CustomizedSolutionsSection() {
+export default function CustomizedSolutionsSection({
+  onWebDev,
+  onSEO,
+  onMarketing,
+  onGraphic,
+  onEcommerce,
+  onGis,
+}: Props) {
   return (
     <section id="solutions" className="mx-auto max-w-7xl px-6 py-24">
       <div className="mx-auto">
-        <h2 className="text-center text-3xl font-semibold text-slate-900 sm:text-4xl">Our Customized Solutions</h2>
+        <h2 className="text-center text-3xl font-semibold text-slate-900 sm:text-4xl">
+          Our Customized Solutions
+        </h2>
+
         <p className="mx-auto mt-4 max-w-3xl text-center text-slate-600">
-          Premium digital services designed to improve speed, visibility, and business outcomes at every stage.
+          Premium digital services designed to improve speed, visibility, and business outcomes.
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-          {solutions.map((solution) => (
-            <FeatureCard key={solution.title} solution={solution} />
+          {solutions.map((solution, index) => (
+            <FeatureCard
+              key={index}
+              solution={solution}
+              onWebDev={onWebDev}
+              onSEO={onSEO}
+              onMarketing={onMarketing}
+              onGraphic={onGraphic}
+              onGis={onGis}
+              onEcommerce={onEcommerce}
+            />
           ))}
         </div>
       </div>

@@ -30,7 +30,7 @@ export default function AboutPage() {
   <h1 className="mt-4 font-['Orbitron'] text-4xl font-black leading-[0.95] tracking-[-0.03em] text-slate-900 sm:text-5xl lg:text-[72px]">
   We are DeMarkTech —
   <br />
-  <span className="inline-block max-w-full sm:whitespace-nowrap bg-gradient-to-r from-[#00AEEF] to-[#CB6CE6] bg-clip-text text-transparent">
+  <span className="inline-block max-w-full sm:whitespace-nowrap text-slate-900">
   More than a marketing agency
 </span>
 </h1>

@@ -107,7 +107,7 @@ export default function Navbar({ onNavClick, activeNav, isVisible }: NavbarProps
                   key={item.label}
                   type="button"
                   role="menuitem"
-                  className="block w-full cursor-pointer rounded-lg px-3 py-2.5 text-left text-cyan-200 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(0,174,239,0.3)] hover:border hover:border-blue-400/30"
+                  className="block w-full cursor-pointer rounded-lg px-3 py-2.5 text-left text-cyan-200 transition-all duration-10 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-400/40 hover:text-cyan-500 hover:shadow-[0_0_15px_rgba(0,174,239,0.3)] hover:border-blue-800/60"
                   onClick={() => {
                     setServicesOpen(false);
                     onNavClick(item.label);

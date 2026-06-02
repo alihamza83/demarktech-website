@@ -1,4 +1,8 @@
-export default function ECommerceDevelopmentPage() {
+
+type Props = {
+  onOpenContact: () => void;
+};
+export default function ECommerceDevelopmentPage({ onOpenContact }: Props) {
   const features = [
     {
       title: "Shopify Development",
@@ -151,7 +155,9 @@ export default function ECommerceDevelopmentPage() {
           <p className="text-base text-slate-600 mb-6 max-w-2xl mx-auto">
             Let's build an e-commerce solution that drives sales and grows your business online.
           </p>
-          <button className="rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 cursor-pointer">
+          <button 
+          onClick={onOpenContact}
+          className="rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 cursor-pointer">
             Start Your Store
           </button>
         </div>

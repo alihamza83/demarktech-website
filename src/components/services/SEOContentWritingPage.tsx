@@ -1,4 +1,7 @@
-export default function SEOContentWritingPage() {
+type Props = {
+  onOpenContact: () => void;
+};
+export default function SEOContentWritingPage({ onOpenContact }: Props) {
   const features = [
     {
       title: "Technical SEO",
@@ -151,7 +154,9 @@ export default function SEOContentWritingPage() {
           <p className="text-base text-slate-600 mb-6 max-w-2xl mx-auto">
             Let's develop an SEO strategy that drives organic traffic and grows your business.
           </p>
-          <button className="rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 cursor-pointer">
+          <button
+          onClick={onOpenContact}
+           className="rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 cursor-pointer">
             Get Free Audit
           </button>
         </div>

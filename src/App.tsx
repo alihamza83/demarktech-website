@@ -177,17 +177,17 @@ export default function App() {
       ) : activePage === "clients" ? (
         <ClientsPage />
       ) : activePage === "web-development" ? (
-        <WebDevelopmentPage />
+        <WebDevelopmentPage onOpenContact={openContactSection} />
       ) : activePage === "graphic-designing" ? (
-        <GraphicDesigningPage />
+        <GraphicDesigningPage onOpenContact={openContactSection}/>
       ) : activePage === "gis-solution" ? (
-        <GISSolutionPage />
+        <GISSolutionPage onOpenContact={openContactSection} />
       ) : activePage === "e-commerce-development" ? (
-        <ECommerceDevelopmentPage />
+        <ECommerceDevelopmentPage onOpenContact={openContactSection}/>
       ) : activePage === "seo-content-writing" ? (
-        <SEOContentWritingPage />
+        <SEOContentWritingPage onOpenContact={openContactSection}/>
       ) : activePage === "digital-marketing" ? (
-        <DigitalMarketingPage />
+        <DigitalMarketingPage onOpenContact={openContactSection}/>
       ) : (
         <>
           <Hero onOpenContact={openContactSection} />
@@ -201,7 +201,13 @@ export default function App() {
           </div>
 
           <WhatWeProvideSection />
-          <CustomizedSolutionsSection />
+          <CustomizedSolutionsSection 
+           onWebDev={openWebDevelopmentPage}
+  onSEO={openSEOContentWritingPage}
+  onMarketing={openDigitalMarketingPage}
+  onGraphic={openGraphicDesigningPage}
+  onGis={openGISSolutionPage}
+  onEcommerce={openECommerceDevelopmentPage}/>
           <SupportSection />
         </>
       )}

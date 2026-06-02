@@ -27,19 +27,19 @@ export default function Hero({ onOpenContact }: HeroProps) {
 
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pb-16 sm:gap-12 sm:px-6 lg:grid-cols-2 lg:items-start lg:gap-8 lg:px-8">
         <motion.div variants={fadeIn} initial="hidden" animate="show">
-          <h1 className="max-w-xl font-[Space_Grotesk,ui-sans-serif,system-ui] text-4xl font-extrabold leading-[0.95] tracking-tight text-slate-900 sm:max-w-2xl sm:text-5xl md:text-6xl lg:max-w-5xl lg:text-7xl">
+          <h1 className="max-w-xl font-[Space_Grotesk,ui-sans-serif,system-ui] text-4xl font-extrabold leading-[0.95] tracking-tight text-slate-200 sm:max-w-2xl sm:text-5xl md:text-6xl lg:max-w-5xl lg:text-7xl">
             <span className="block">We build</span>
             <span className="block">brands that</span>
             <span className="block pt-1">
               <span className="bg-gradient-to-r from-blue-400 via-purple-300 to-blue-300 bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(59,130,246,0.35)]">
                 Dominate
               </span>{" "}
-              <span className="text-slate-900">the</span>
+              <span className="text-slate-200">the</span>
             </span>
-            <span className="block pt-1 text-slate-900">digital world</span>
+            <span className="block pt-1 text-slate-200">digital world</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-900 sm:text-lg">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-100 sm:text-lg">
             DeMarkTech is a full-service marketing agency helping B2B companies, B2C brands, startups, and new businesses grow faster through smart strategy, creative execution, and data-driven results.
           </p>
 

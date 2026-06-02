@@ -1,4 +1,8 @@
-export default function WebDevelopmentPage() {
+type Props = {
+  onOpenContact: () => void;
+};
+
+export default function WebDevelopmentPage({ onOpenContact }: Props) {
   const features = [
     {
       title: "Custom Websites",
@@ -151,9 +155,12 @@ export default function WebDevelopmentPage() {
           <p className="text-base text-slate-600 mb-6 max-w-2xl mx-auto">
             Let's discuss your project and create a web solution that drives your business forward.
           </p>
-          <button className="rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 cursor-pointer">
-            Get Started
-          </button>
+          <button
+  onClick={onOpenContact}
+  className="rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 cursor-pointer"
+>
+  Get Started
+</button>
         </div>
       </div>
     </section>

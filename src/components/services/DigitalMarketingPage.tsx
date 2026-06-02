@@ -1,4 +1,8 @@
-export default function DigitalMarketingPage() {
+
+type Props = {
+  onOpenContact: () => void;
+};
+export default function DigitalMarketingPage({ onOpenContact }: Props) {
   const features = [
     {
       title: "Social Media Marketing",
@@ -151,7 +155,9 @@ export default function DigitalMarketingPage() {
           <p className="text-base text-slate-600 mb-6 max-w-2xl mx-auto">
             Let's develop a digital marketing strategy that drives results and scales your business.
           </p>
-          <button className="rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 cursor-pointer">
+          <button
+          onClick={onOpenContact}
+           className="rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 cursor-pointer">
             Book Consultation
           </button>
         </div>
