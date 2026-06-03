@@ -59,7 +59,7 @@ export default function GISSolutionPage({ onOpenContact }: Props) {
             Cloud & DevOps
           </p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-            Infrastructure that scales with your ambition
+            Infrastructure That Scales With Your Ambition
           </h1>
           <p className="mt-5 max-w-3xl text-base text-slate-900 sm:text-lg">
             We design, migrate, and automate cloud environments that keep your teams moving fast and your systems resilient — from Day 1 to global scale
