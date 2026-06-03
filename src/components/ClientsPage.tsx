@@ -51,7 +51,7 @@ export default function ClientsPage() {
       <div className="mx-auto max-w-6xl">
         <p className="text-xs font-semibold tracking-[0.28em] text-blue-600/80">CLIENT TESTIMONIALS</p>
         <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">What Our Clients Say</h1>
-        <p className="mt-5 max-w-3xl text-slate-600 sm:text-lg">
+        <p className="mt-5 max-w-3xl text-slate-900 sm:text-lg">
           Don&apos;t just take our word for it — here&apos;s what the businesses we&apos;ve partnered with have to say about working
           with DemarkTech.
         </p>

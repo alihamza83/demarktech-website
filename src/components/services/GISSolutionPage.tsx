@@ -36,10 +36,10 @@ export default function GISSolutionPage({ onOpenContact }: Props) {
   ];
 
   const process = [
-    { step: "01", title: "ASSESS", desc: "We map your current infrastructure, identify risks, and define a target architecture aligned to your business goals." },
-    { step: "02", title: " DESIGN", desc: "A detailed cloud-native design — networks, security, scalability, and cost modelling — reviewed and approved before a single resource is provisioned." },
-    { step: "03", title: "BUILD", desc: "Hands-on delivery by certified engineers. Infrastructure as code from day one, with full documentation and knowledge transfer." },
-    { step: "04", title: "OPTIMISE", desc: "Continuous monitoring, cost reviews, and quarterly roadmap sessions to keep your platform ahead of your growth curve. " },
+    { step: "01", title: "Assess", desc: "We map your current infrastructure, identify risks, and define a target architecture aligned to your business goals." },
+    { step: "02", title: "Design", desc: "A detailed cloud-native design — networks, security, scalability, and cost modelling — reviewed and approved before a single resource is provisioned." },
+    { step: "03", title: "Build", desc: "Hands-on delivery by certified engineers. Infrastructure as code from day one, with full documentation and knowledge transfer." },
+    { step: "04", title: "Optimise", desc: "Continuous monitoring, cost reviews, and quarterly roadmap sessions to keep your platform ahead of your growth curve. " },
     { step: "05", title: "Training", desc: "Providing comprehensive training and documentation for your team." },
   ];
 
@@ -90,7 +90,7 @@ export default function GISSolutionPage({ onOpenContact }: Props) {
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-slate-900 mb-8">Our Approach</h2>
           <p className="text-lg text-slate-600 mb-6">
-  A four-phase process — from audit to continuous improvement
+  A five-phase process — from audit to continuous improvement
 </p>
           <div className="grid gap-6 md:grid-cols-5">
             {process.map((item, index) => (
@@ -153,7 +153,7 @@ export default function GISSolutionPage({ onOpenContact }: Props) {
 
         {/* CTA Section */}
         <div className="rounded-2xl border border-blue-300/20 bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-8 backdrop-blur-sm shadow-md text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Ready to modernise your infrastructure?</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Ready To Modernise Your Infrastructure?</h2>
           <p className="text-base text-slate-600 mb-6 max-w-2xl mx-auto">
             Book a free 30-minute architecture review with a Demark Tech cloud engineer.
           </p>

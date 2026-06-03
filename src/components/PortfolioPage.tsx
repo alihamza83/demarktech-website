@@ -49,7 +49,7 @@ export default function PortfolioPage() {
 
       <div className="mx-auto max-w-6xl">
         <h1 className="text-4xl font-semibold text-slate-900 sm:text-5xl">Work We're Proud Of</h1>
-        <p className="mt-5 max-w-3xl text-slate-600 sm:text-lg">
+        <p className="mt-5 max-w-3xl text-slate-900 sm:text-lg">
           A glimpse into some of the projects where we've helped brands grow, convert, and stand out.
         </p>
 

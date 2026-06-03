@@ -8,7 +8,7 @@ const contactItems = [
   { icon: "📞", title: "Phone number", text: "+92 (303) 339-2444" },
   { icon: "@", title: "Email address", text: "info@demarktech.co" },
   { icon: "📍" , title: "Physical address", text: "London, United Kingdom" },
-  { icon: "🕒", title: "Working hours", text: "Mon-Fri: 09:00 AM - 06:00 PM" },
+  { icon: "🕒", title: "Working hours", text: "Mon-Fri" },
 ];
 
 export default function ContactSection() {
@@ -58,7 +58,7 @@ export default function ContactSection() {
 
       <div className="mx-auto max-w-7xl">
         <h2 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">Get in Touch With Us</h2>
-        <p className="mt-5 max-w-4xl text-base text-slate-600 sm:text-lg">
+        <p className="mt-5 max-w-4xl text-base text-slate-900 sm:text-lg">
           DemarkTech partners with teams that want a calmer, faster path from idea to launch — combining strategy, design,
           and engineering without the typical agency drag.
         </p>
@@ -195,6 +195,8 @@ export default function ContactSection() {
     <option>App Development</option>
     <option>Video Production</option>
     <option>Multiple Services</option>
+    <option>Cloud & DevOps</option>
+    <option>UI/UX Design</option>
   </select>
 </div>
             <div className="mt-4">

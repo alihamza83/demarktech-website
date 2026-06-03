@@ -27,8 +27,8 @@ export default function AboutPage() {
     ABOUT US
   </p>
 
-  <h1 className="mt-4 font-['Orbitron'] text-4xl font-black leading-[0.95] tracking-[-0.03em] text-slate-900 sm:text-5xl lg:text-[72px]">
-  We are DeMarkTech —
+  <h1 className="mt-4 font-semibold text-4xl font-black leading-[0.95] tracking-[-0.03em] text-slate-900 sm:text-5xl lg:text-[72px]">
+  We are DeMark Tech —
   <br />
   <span className="inline-block max-w-full sm:whitespace-nowrap text-slate-900">
   More than a marketing agency

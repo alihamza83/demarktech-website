@@ -154,7 +154,7 @@ export default function GraphicDesigningPage({ onOpenContact }: Props) {
 
         {/* CTA Section */}
         <div className="rounded-2xl border border-blue-300/20 bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-8 backdrop-blur-sm shadow-md text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Got a product that needs a design overhaul?</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Got a Product That Needs a Design Overhaul?</h2>
           <p className="text-base text-slate-600 mb-6 max-w-2xl mx-auto">
             Book a free UX audit and get a prioritised list of improvements within 48 hours.
           </p>
