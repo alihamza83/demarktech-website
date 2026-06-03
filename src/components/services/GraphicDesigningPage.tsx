@@ -37,7 +37,7 @@ export default function GraphicDesigningPage({ onOpenContact }: Props) {
 
   const process = [
     { step: "01", title: "Research", desc: "User interviews, analytics review, and competitor benchmarking to understand the problem space." },
-    { step: "02", title: "DEFINE", desc: "User personas, journey maps, and a clear design brief that aligns the team before a pixel is drawn." },
+    { step: "02", title: "Define", desc: "User personas, journey maps, and a clear design brief that aligns the team before a pixel is drawn." },
     { step: "03", title: "Design", desc: "Low-fidelity flows evolving into polished, interactive prototypes ready for stakeholder review." },
     { step: "04", title: "Validation", desc: "Usability testing with real users and iterative refinement until the experience truly works." },
     { step: "05", title: "Delivery", desc: "Providing final assets in all required formats for print and digital use." },
