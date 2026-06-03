@@ -4,6 +4,8 @@ import ClientsPage from "./components/ClientsPage";
 import ContactSection from "./components/ContactSection";
 import CustomizedSolutionsSection from "./components/CustomizedSolutionsSection";
 import PortfolioPage from "./components/PortfolioPage";
+import PrivacyPage from "./components/PrivacyPage";
+import TermsPage from "./components/TermsPage";
 import WebDevelopmentPage from "./components/services/WebDevelopmentPage";
 import GraphicDesigningPage from "./components/services/GraphicDesigningPage";
 import GISSolutionPage from "./components/services/GISSolutionPage";
@@ -20,7 +22,7 @@ import WhatWeProvideSection from "./components/home/WhatWeProvideSection";
 import WhyChooseSection from "./components/home/WhyChooseSection";
 import type { NavLabel } from "./types/navigation";
 
-type Page = "home" | "contact" | "about" | "portfolio" | "clients" | "web-development" | "graphic-designing" | "gis-solution" | "e-commerce-development" | "seo-content-writing" | "digital-marketing";
+type Page = "home" | "contact" | "about" | "portfolio" | "clients" | "web-development" | "graphic-designing" | "cloud-devops" | "e-commerce-development" | "seo-content-writing" | "digital-marketing" | "privacy" | "terms";
 
 export default function App() {
   const [activePage, setActivePage] = useState<Page>("home");
@@ -79,7 +81,7 @@ export default function App() {
   };
 
   const openGISSolutionPage = () => {
-    setActivePage("gis-solution");
+    setActivePage("cloud-devops");
     setActiveNav("GIS SOLUTION");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -99,6 +101,16 @@ export default function App() {
   const openDigitalMarketingPage = () => {
     setActivePage("digital-marketing");
     setActiveNav("DIGITAL MARKETING");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const openPrivacyPage = () => {
+    setActivePage("privacy");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const openTermsPage = () => {
+    setActivePage("terms");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -180,7 +192,7 @@ export default function App() {
         <WebDevelopmentPage onOpenContact={openContactSection} />
       ) : activePage === "graphic-designing" ? (
         <GraphicDesigningPage onOpenContact={openContactSection}/>
-      ) : activePage === "gis-solution" ? (
+      ) : activePage === "cloud-devops" ? (
         <GISSolutionPage onOpenContact={openContactSection} />
       ) : activePage === "e-commerce-development" ? (
         <ECommerceDevelopmentPage onOpenContact={openContactSection}/>
@@ -188,6 +200,10 @@ export default function App() {
         <SEOContentWritingPage onOpenContact={openContactSection}/>
       ) : activePage === "digital-marketing" ? (
         <DigitalMarketingPage onOpenContact={openContactSection}/>
+      ) : activePage === "privacy" ? (
+        <PrivacyPage />
+      ) : activePage === "terms" ? (
+        <TermsPage />
       ) : (
         <>
           <Hero onOpenContact={openContactSection} />
@@ -200,7 +216,12 @@ export default function App() {
             <WhyChooseSection onOpenContact={openContactSection} />
           </div>
 
-          <WhatWeProvideSection />
+          <WhatWeProvideSection
+            onWebDev={openWebDevelopmentPage}
+            onGraphic={openGraphicDesigningPage}
+            onEcommerce={openECommerceDevelopmentPage}
+            onSEO={openSEOContentWritingPage}
+          />
           <CustomizedSolutionsSection 
            onWebDev={openWebDevelopmentPage}
   onSEO={openSEOContentWritingPage}
@@ -211,7 +232,7 @@ export default function App() {
           <SupportSection />
         </>
       )}
-      <Footer onNavClick={handleNavClick} />
+      <Footer onNavClick={handleNavClick} onOpenPrivacy={openPrivacyPage} onOpenTerms={openTermsPage} />
     </main>
   );
 }

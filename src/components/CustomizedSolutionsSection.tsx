@@ -48,7 +48,7 @@ const solutions: Solution[] = [
     ),
   },
   {
-    title: "Graphic Designing",
+    title: "UI/UX Design",
     description: "Elegant user experiences crafted to reduce friction and maximize product engagement.",
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -70,7 +70,7 @@ const solutions: Solution[] = [
     ),
   },
   {
-    title: "GIS Solution",
+    title: "Cloud & DevOps",
     description: "Reliable CI/CD and infrastructure automation that scales with your product roadmap.",
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -149,9 +149,9 @@ function FeatureCard({
   if (solution.title === "Web Development") onWebDev?.();
   if (solution.title === "SEO Content Optimization") onSEO?.();
   if (solution.title === "Digital Marketing") onMarketing?.();
-  if (solution.title === "Graphic Designing") onGraphic?.();
+  if (solution.title === "UI/UX Design") onGraphic?.();
   if (solution.title === "E-Commerce Solutions") onEcommerce?.();
-  if (solution.title === "GIS Solution") onGis?.();
+  if (solution.title === "Cloud & DevOps") onGis?.();
 }}
 >
   Get Started Now →

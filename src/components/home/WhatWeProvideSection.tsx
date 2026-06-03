@@ -1,5 +1,12 @@
 import { type ReactNode } from "react";
 
+type Props = {
+  onWebDev?: () => void;
+  onGraphic?: () => void;
+  onEcommerce?: () => void;
+  onSEO?: () => void;
+};
+
 const cards = {
   ecommerce: {
     title: "E-Commerce development",
@@ -18,7 +25,7 @@ const cards = {
     desc: "Campaign systems that iterate on real signals: creative, messaging, and channel mix aligned to ROI.",
   },
   graphics: {
-    title: "Graphic design",
+    title: "UI/UX design",
     desc: "Identity and UI craft that carries across web, ads, decks, and print without losing cohesion.",
   },
 } as const;
@@ -35,6 +42,7 @@ type CardProps = {
   className?: string;
   bodyMinHeightClass?: string;
   contentMinHeightClass?: string;
+  onClick?: () => void;
 };
 
 function ServiceCard({
@@ -49,6 +57,7 @@ function ServiceCard({
   className = "",
   bodyMinHeightClass,
   contentMinHeightClass,
+  onClick,
 }: CardProps) {
   const isLarge = variant === "large";
   const contentJustify =
@@ -56,11 +65,12 @@ function ServiceCard({
 
   return (
     <div
-      role="article"
-      tabIndex={0}
+      role={onClick ? "button" : "article"}
+      tabIndex={onClick ? 0 : undefined}
+      onClick={onClick}
       aria-label={title}
       className={[
-        "group relative block cursor-default overflow-hidden rounded-2xl border border-blue-300/30 bg-gradient-to-br from-white to-blue-50/50",
+        "group relative block cursor-pointer overflow-hidden rounded-2xl border border-blue-300/30 bg-gradient-to-br from-white to-blue-50/50",
         "shadow-[0_10px_40px_rgba(0,0,0,0.1)]",
         "transition-all duration-300 ease-out hover:-translate-y-1 hover:border-blue-300/55 hover:shadow-[0_18px_60px_rgba(0,0,0,0.15)]",
         "outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60",
@@ -112,9 +122,12 @@ function ServiceCard({
           >
             <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
             {description ? <p className="mt-3 max-w-md text-sm leading-6 text-slate-600">{description}</p> : null}
-            <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-blue-600 transition group-hover:text-blue-700">
+            <button
+              onClick={onClick}
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-blue-600 transition group-hover:text-blue-700"
+            >
               Learn more <span aria-hidden="true">→</span>
-            </span>
+            </button>
           </div>
 
           {!imageUrl && !isLarge ? (
@@ -126,7 +139,12 @@ function ServiceCard({
   );
 }
 
-export default function WhatWeProvideSection() {
+export default function WhatWeProvideSection({
+  onWebDev,
+  onGraphic,
+  onEcommerce,
+  onSEO,
+}: Props) {
   return (
     <section id="services" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
       <h2 className="text-center text-2xl font-semibold text-slate-900 sm:text-3xl">What we provide</h2>
@@ -143,6 +161,7 @@ export default function WhatWeProvideSection() {
             contentAlign="top"
             imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
             imagePosition="full"
+            onClick={onEcommerce}
           />
         </div>
         <div className="lg:col-span-1">
@@ -154,6 +173,7 @@ export default function WhatWeProvideSection() {
             className="pb-1"
             imageUrl="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
             overlayStyle="bg-[linear-gradient(to_bottom,rgba(255,255,255,0.15),rgba(255,255,255,0.9))]"
+            onClick={onWebDev}
           />
         </div>
 
@@ -167,11 +187,13 @@ export default function WhatWeProvideSection() {
           contentMinHeightClass="min-h-0"
           imageUrl="https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=1200&q=80"
           overlayStyle="bg-[linear-gradient(to_top,rgba(255,255,255,0.12),rgba(255,255,255,0.92))]"
+          onClick={onSEO}
         />
 
         <ServiceCard
           title={cards.graphics.title}
           description={cards.graphics.desc}
+          onClick={onGraphic}
           customLayout={
             <div className="relative min-h-[280px] w-full overflow-hidden rounded-2xl sm:min-h-[350px]">
               <img

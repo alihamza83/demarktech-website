@@ -5,9 +5,9 @@ import InputField from "./InputField";
 
 
 const contactItems = [
-  { icon: "📞", title: "Phone number", text: "+7 (495) 123-45-67" },
-  { icon: "@", title: "Email address", text: "info@demarktech.com" },
-  { icon: "📍" , title: "Physical address", text: "Nevada, 47284 Queenie Drive Suite 865" },
+  { icon: "📞", title: "Phone number", text: "+92 (303) 339-2444" },
+  { icon: "@", title: "Email address", text: "info@demarktech.co" },
+  { icon: "📍" , title: "Physical address", text: "London, United Kingdom" },
   { icon: "🕒", title: "Working hours", text: "Mon-Fri: 09:00 AM - 06:00 PM" },
 ];
 

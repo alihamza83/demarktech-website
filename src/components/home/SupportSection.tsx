@@ -43,7 +43,7 @@ export default function SupportSection() {
           </ul>
           <button
   type="button"
-  onClick={() => window.open("https://wa.me/923001234567", "_blank")}
+  onClick={() => window.open("https://wa.me/923033392444", "_blank")}
   className="mt-8 inline-flex min-h-[48px] items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 sm:px-7"
 >
   WhatsApp

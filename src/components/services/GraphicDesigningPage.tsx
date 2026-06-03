@@ -56,7 +56,7 @@ export default function GraphicDesigningPage({ onOpenContact }: Props) {
       <div className="mx-auto max-w-6xl">
         <div className="mb-12">
           <p className="text-xs font-semibold tracking-[0.3em] bg-gradient-to-r from-[#00AEEF] to-[#CB6CE6] text-transparent bg-clip-text">
-            GRAPHIC DESIGNING
+            UI/UX Design
           </p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
             Design That Captivates & Converts

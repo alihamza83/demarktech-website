@@ -15,8 +15,8 @@ export type NavLabel =
 
 export const SERVICES_DROPDOWN = [
   { label: "WEB DEVELOPMENT" as const, text: "Web Development" },
-  { label: "GRAPHIC DESIGNING" as const, text: "Graphic Designing" },
-  { label: "GIS SOLUTION" as const, text: "GIS Solution" },
+  { label: "GRAPHIC DESIGNING" as const, text: "UI/UX DESIGN" },
+  { label: "GIS SOLUTION" as const, text: "Cloud & DevOps" },
   { label: "E-COMMERCE DEVELOPMENT" as const, text: "E-Commerce Development" },
   { label: "SEO & CONTENT WRITING" as const, text: "SEO & Content Writing" },
   { label: "DIGITAL MARKETING" as const, text: "Digital Marketing" },
@@ -41,8 +41,8 @@ export const NAV_DISPLAY: Record<NavLabel, string> = {
   SOLUTIONS: "Solutions",
   CONTACT: "Contact",
   "WEB DEVELOPMENT": "Web Development",
-  "GRAPHIC DESIGNING": "Graphic Designing",
-  "GIS SOLUTION": "GIS Solution",
+  "GRAPHIC DESIGNING": "UI/UX DESIGN",
+  "GIS SOLUTION": "CLOUD & DEVOPS",
   "E-COMMERCE DEVELOPMENT": "E-Commerce Development",
   "SEO & CONTENT WRITING": "SEO & Content Writing",
   "DIGITAL MARKETING": "Digital Marketing",

@@ -6,9 +6,11 @@ const LOGO_SRC = "/lastlogo.png";
 
 type FooterProps = {
   onNavClick: (label: NavLabel) => void;
+  onOpenPrivacy?: () => void;
+  onOpenTerms?: () => void;
 };
 
-export default function Footer({ onNavClick }: FooterProps) {
+export default function Footer({ onNavClick, onOpenPrivacy, onOpenTerms }: FooterProps) {
   
   const year = new Date().getFullYear();
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -83,13 +85,13 @@ useEffect(() => {
             </button>
           </nav>
           <div className="flex flex-col gap-3 text-slate-900 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
-            <a href="#privacy" className="transition hover:text-blue-600">
+            <button type="button" onClick={onOpenPrivacy} className="transition hover:text-blue-600">
               Privacy
-            </a>
-            <a href="#terms" className="transition hover:text-blue-600">
+            </button>
+            <button type="button" onClick={onOpenTerms} className="transition hover:text-blue-600">
               Terms
-            </a>
-            <p className="text-sm">Nevada — 47284 Queenie Drive, Suite 865</p>
+            </button>
+            <p className="text-sm">London — United Kingdom</p>
           </div>
         </div>
 
@@ -133,7 +135,7 @@ useEffect(() => {
               <FaTiktok className="text-sm sm:text-base" />
             </a>
             <a
-              href="https://wa.me/923001234567"
+              href="https://wa.me/923033392444"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
