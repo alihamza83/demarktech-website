@@ -108,7 +108,7 @@ useEffect(() => {
               <FaFacebookF className="text-sm sm:text-base" />
             </a>
             <a
-              href="https://www.instagram.com/demarktechpk?utm_source=qr&igsh=MXZuOHVuYnhqcTVrdg=="
+              href="https://www.instagram.com/demark_tech/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
