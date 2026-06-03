@@ -4,42 +4,42 @@ type Props = {
 export default function GISSolutionPage({ onOpenContact }: Props) {
   const features = [
     {
-      title: "GIS Dashboards",
-      desc: "Interactive dashboards for visualizing and analyzing geospatial data in real-time.",
+      title: "Cloud Migration",
+      desc: "Seamless lift-and-shift or full re-architecture migrations to AWS, Azure, or Google Cloud — with zero downtime and a clear rollback plan.",
       icon: "🗺️",
     },
     {
-      title: "Spatial Analysis",
-      desc: "Advanced spatial analysis tools for pattern detection, proximity analysis, and location intelligence.",
+      title: "CI/CD Pipeline Design",
+      desc: "Automated build, test, and deployment pipelines that eliminate bottlenecks and let your engineers ship with confidence every single day.",
       icon: "📍",
     },
     {
-      title: "Geo-Data Visualization",
-      desc: "Beautiful maps and visual representations that make complex data easy to understand.",
+      title: "Infrastructure as Code",
+      desc: "Repeatable, version-controlled infrastructure using Terraform and Ansible — no more manual configs, no more configuration drift.",
       icon: "📊",
     },
     {
-      title: "Mapping Systems",
-      desc: "Custom mapping solutions with layers, markers, and interactive features for your specific needs.",
+      title: "Cloud Security & Compliance",
+      desc: "Zero-trust architecture, IAM policies, and audit-ready compliance frameworks (SOC 2, ISO 27001) built into every layer of your stack.",
       icon: "🌍",
     },
     {
-      title: "Location Intelligence",
-      desc: "Data-driven insights powered by location data for better decision-making.",
+      title: "Monitoring & Observability",
+      desc: "Full-stack visibility with Datadog, Grafana, and custom alerting — so your team knows about problems before your customers do.",
       icon: "🎯",
     },
     {
-      title: "Mobile GIS",
-      desc: "Field data collection and mobile mapping solutions for on-the-go spatial data management.",
+      title: "Cost Optimisation",
+      desc: "Cloud spend audits, right-sizing, and reserved capacity planning that cut waste without touching performance or reliability.",
       icon: "📱",
     },
   ];
 
   const process = [
-    { step: "01", title: "Data Assessment", desc: "Evaluating your geospatial data requirements and existing data sources." },
-    { step: "02", title: "System Design", desc: "Designing the GIS architecture and data models for your specific use case." },
-    { step: "03", title: "Development", desc: "Building custom GIS applications with modern mapping technologies." },
-    { step: "04", title: "Integration", desc: "Integrating GIS solutions with your existing systems and workflows." },
+    { step: "01", title: "ASSESS", desc: "We map your current infrastructure, identify risks, and define a target architecture aligned to your business goals." },
+    { step: "02", title: " DESIGN", desc: "A detailed cloud-native design — networks, security, scalability, and cost modelling — reviewed and approved before a single resource is provisioned." },
+    { step: "03", title: "BUILD", desc: "Hands-on delivery by certified engineers. Infrastructure as code from day one, with full documentation and knowledge transfer." },
+    { step: "04", title: "OPTIMISE", desc: "Continuous monitoring, cost reviews, and quarterly roadmap sessions to keep your platform ahead of your growth curve. " },
     { step: "05", title: "Training", desc: "Providing comprehensive training and documentation for your team." },
   ];
 
@@ -59,10 +59,10 @@ export default function GISSolutionPage({ onOpenContact }: Props) {
             Cloud & DevOps
           </p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-            Location Intelligence & Spatial Solutions
+            Infrastructure that scales with your ambition
           </h1>
           <p className="mt-5 max-w-3xl text-base text-slate-900 sm:text-lg">
-            We transform geospatial data into actionable insights. From custom GIS dashboards to advanced spatial analysis, we help organizations leverage location data for smarter decision-making and operational efficiency.
+            We design, migrate, and automate cloud environments that keep your teams moving fast and your systems resilient — from Day 1 to global scale
           </p>
         </div>
 
@@ -88,7 +88,10 @@ export default function GISSolutionPage({ onOpenContact }: Props) {
 
         {/* Process Section */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8">Our GIS Process</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">Our Approach</h2>
+          <p className="text-lg text-slate-600 mb-6">
+  A four-phase process — from audit to continuous improvement
+</p>
           <div className="grid gap-6 md:grid-cols-5">
             {process.map((item, index) => (
               <div
@@ -107,15 +110,15 @@ export default function GISSolutionPage({ onOpenContact }: Props) {
 
         {/* Why Choose Us */}
         <div className="mb-16 rounded-2xl border border-blue-300/20 bg-white/80 p-8 backdrop-blur-sm shadow-md">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">Why Choose Us?</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Technologies we work with</h2>
           <div className="grid gap-6 md:grid-cols-2">
             <div className="flex items-start gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-600">
                 ✓
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-1">GIS Expertise</h3>
-                <p className="text-sm text-slate-600">Specialized team with deep knowledge of geospatial technologies and standards.</p>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1">Cloud Platforms</h3>
+                <p className="text-sm text-slate-600">Deep expertise across AWS, Microsoft Azure, and Google Cloud for any scale of deployment.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -123,8 +126,8 @@ export default function GISSolutionPage({ onOpenContact }: Props) {
                 ✓
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-1">Custom Solutions</h3>
-                <p className="text-sm text-slate-600">Tailored GIS applications designed for your specific industry and use cases.</p>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1">Infrastructure as Code</h3>
+                <p className="text-sm text-slate-600">Repeatable, version-controlled environments using Terraform, Ansible, and Helm charts.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -132,8 +135,8 @@ export default function GISSolutionPage({ onOpenContact }: Props) {
                 ✓
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-1">Modern Technology</h3>
-                <p className="text-sm text-slate-600">Latest GIS tools, frameworks, and mapping libraries for optimal performance.</p>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1">Containers & Orchestration</h3>
+                <p className="text-sm text-slate-600">Docker and Kubernetes-powered workloads designed for resilience, portability, and auto-scaling.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -141,8 +144,8 @@ export default function GISSolutionPage({ onOpenContact }: Props) {
                 ✓
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-1">Scalable Systems</h3>
-                <p className="text-sm text-slate-600">Solutions that grow with your data needs and user requirements.</p>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1">CI/CD Pipelines</h3>
+                <p className="text-sm text-slate-600">Automated delivery with Jenkins, GitHub Actions, and GitLab CI — ship faster with full confidence.</p>
               </div>
             </div>
           </div>
@@ -150,9 +153,9 @@ export default function GISSolutionPage({ onOpenContact }: Props) {
 
         {/* CTA Section */}
         <div className="rounded-2xl border border-blue-300/20 bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-8 backdrop-blur-sm shadow-md text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Ready to Harness Location Intelligence?</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Ready to modernise your infrastructure?</h2>
           <p className="text-base text-slate-600 mb-6 max-w-2xl mx-auto">
-            Let's discuss how GIS solutions can transform your data into powerful location-based insights.
+            Book a free 30-minute architecture review with a Demark Tech cloud engineer.
           </p>
           <button 
           onClick={onOpenContact}
