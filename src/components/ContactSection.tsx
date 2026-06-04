@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import InputField from "./InputField";
+import emailjs from "@emailjs/browser";
 
 
 
@@ -28,20 +29,58 @@ export default function ContactSection() {
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const nextErrors: Record<string, string> = {};
-    if (!formData.name.trim()) nextErrors.name = "This field is required";
-    if (!formData.email.trim()) nextErrors.email = "This field is required";
-    if (!formData.company.trim()) nextErrors.company = "This field is required";
-    if (!formData.phone.trim()) nextErrors.phone = "This field is required";
-    if (!formData.details.trim()) nextErrors.details = "This field is required";
-    setErrors(nextErrors);
-    if (Object.keys(nextErrors).length === 0) {
-      window.alert("Form submitted successfully.");
-    }
-  };
-  
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+
+  const nextErrors: Record<string, string> = {};
+
+  if (!formData.name.trim()) nextErrors.name = "This field is required";
+  if (!formData.email.trim()) nextErrors.email = "This field is required";
+  if (!formData.phone.trim()) nextErrors.phone = "This field is required";
+  if (!formData.details.trim()) nextErrors.details = "This field is required";
+
+  setErrors(nextErrors);
+
+  if (Object.keys(nextErrors).length > 0) return;
+
+  try {
+    const templateParams = {
+      name: formData.name,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+      service: formData.service,
+      details: formData.details,
+    };
+
+    await emailjs.send(
+      "service_qfer26u",
+      "template_1pyvyil",
+      templateParams,
+      "U8AUF9xL2B40GMiDd"
+    );
+
+    alert(
+      "Thank you for contacting Demark Tech. We will get back to you soon."
+    );
+
+    setFormData({
+      name: "",
+      lastName: "",
+      email: "",
+      service: "",
+      company: "",
+      phone: "",
+      details: "",
+    });
+  } catch (error) {
+    console.error(error);
+
+    alert(
+      "Something went wrong. Please try again later."
+    );
+  }
+};
   
 
   return (

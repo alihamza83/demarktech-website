@@ -1,6 +1,7 @@
 import type { NavLabel } from "../../types/navigation";
 import { useEffect, useState } from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const LOGO_SRC = "/lastlogo.png";
 
@@ -25,6 +26,37 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 
+const [newsletterEmail, setNewsletterEmail] = useState("");
+
+const handleNewsletterSubmit = async (
+  e: React.FormEvent<HTMLFormElement>
+) => {
+  e.preventDefault();
+
+  if (!newsletterEmail.trim()) {
+    alert("Please enter your email address");
+    return;
+  }
+
+  try {
+    await emailjs.send(
+      "service_qfer26u",
+      "template_dwyj6pq",
+      {
+        email: newsletterEmail,
+      },
+      "U8AUF9xL2B40GMiDd"
+    );
+
+    alert("Thank you for subscribing to Demark Tech!");
+
+    setNewsletterEmail("");
+  } catch (error) {
+    console.error(error);
+    alert("Subscription failed. Please try again.");
+  }
+};
+
   return (
     <footer className="relative mt-8 overflow-hidden border-t border-slate-200/50 sm:mt-0">
 
@@ -47,7 +79,7 @@ useEffect(() => {
 
           <form
             className="flex w-full max-w-full flex-col gap-2 sm:max-w-md sm:flex-row sm:items-stretch"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleNewsletterSubmit}
           >
             <label htmlFor="footer-email" className="sr-only">
               Email for newsletter
@@ -56,6 +88,8 @@ useEffect(() => {
               id="footer-email"
               type="email"
               name="email"
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
               autoComplete="email"
               placeholder="Work email"
               className="h-12 min-h-[48px] w-full min-w-0 flex-1 rounded-lg border border-slate-300/50 bg-white/80 px-4 text-sm text-slate-900 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none sm:rounded-l-lg sm:rounded-r-none sm:border-r-0"
