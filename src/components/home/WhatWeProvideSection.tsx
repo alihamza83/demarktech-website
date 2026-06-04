@@ -70,7 +70,7 @@ function ServiceCard({
       onClick={onClick}
       aria-label={title}
       className={[
-        "group relative block cursor-pointer overflow-hidden rounded-2xl border border-blue-300/30 bg-gradient-to-br from-white to-blue-50/50",
+        "group relative block min-w-0 cursor-pointer overflow-hidden rounded-2xl border border-blue-300/30 bg-gradient-to-br from-white to-blue-50/50",
         "shadow-[0_10px_40px_rgba(0,0,0,0.1)]",
         "transition-all duration-300 ease-out hover:-translate-y-1 hover:border-blue-300/55 hover:shadow-[0_18px_60px_rgba(0,0,0,0.15)]",
         "outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60",
@@ -91,7 +91,7 @@ function ServiceCard({
           className={
             isLarge
               ? "relative grid min-h-[320px] grid-cols-1 gap-6 p-6 sm:min-h-[380px] sm:p-8 md:grid-cols-2"
-              : `relative ${bodyMinHeightClass ?? "min-h-[400px]"} overflow-hidden p-6 sm:p-7 ${className}`
+              : `relative ${bodyMinHeightClass ?? "min-h-[320px] sm:min-h-[400px]"} min-w-0 overflow-hidden p-6 sm:p-7 ${className}`
           }
         >
           {imageUrl && (imagePosition === "full" || isLarge) ? (

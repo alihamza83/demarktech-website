@@ -46,7 +46,7 @@ export default function WhyChooseSection({ onOpenContact }: WhyChooseSectionProp
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                className="group relative flex min-h-[280px] flex-col overflow-hidden rounded-[22px] border border-blue-400/40 bg-gradient-to-b from-white to-blue-50/50 px-5 pb-5 pt-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/20 sm:min-h-[300px]"
+                className="group relative flex min-w-0 min-h-[280px] flex-col overflow-hidden rounded-[22px] border border-blue-400/40 bg-gradient-to-b from-white to-blue-50/50 px-5 pb-5 pt-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/20 sm:min-h-[300px]"
               >
                 <div className="absolute left-0 top-0 h-[2px] w-full overflow-hidden rounded-t-[22px]">
                   <div className="h-full w-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
@@ -78,7 +78,7 @@ export default function WhyChooseSection({ onOpenContact }: WhyChooseSectionProp
   />
 </div>
 
-          <div className="relative z-10 flex flex-col gap-0 px-1 py-5 sm:gap-0 px-4 sm:py-1">
+          <div className="relative z-10 flex flex-col gap-0 px-4 py-5 sm:gap-0 sm:px-6 sm:py-1">
             <div className="mx-auto w-full max-w-md lg:mx-0">
               <img
                 src="/ch.png"
@@ -87,7 +87,7 @@ export default function WhyChooseSection({ onOpenContact }: WhyChooseSectionProp
               />
             </div>
             <div className="text-center ">
-              <h3 className="mx-auto max-w-full whitespace-nowrap text-xl font-bold leading-snug text-slate-900 sm:text-[1.35rem]">
+              <h3 className="mx-auto max-w-full text-xl font-bold leading-snug text-slate-900 sm:text-[1.35rem]">
                 Where strategy meets creativity
               </h3>
               <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-slate-600 sm:text-[15px] sm:leading-7">
@@ -96,7 +96,7 @@ export default function WhyChooseSection({ onOpenContact }: WhyChooseSectionProp
               <button
                 type="button"
                 onClick={onOpenContact}
-                className="mt-8 mb-4 inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 px-5 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 sm:w-auto"
+                className="mt-8 mb-4 inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 px-5 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 sm:w-auto"
               >
                 Get started
                 <span aria-hidden="true">→</span>

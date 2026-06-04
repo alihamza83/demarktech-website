@@ -46,7 +46,7 @@ useEffect(() => {
           </div>
 
           <form
-            className="flex w-full max-w-md flex-col gap-2 sm:flex-row sm:items-stretch"
+            className="flex w-full max-w-full flex-col gap-2 sm:max-w-md sm:flex-row sm:items-stretch"
             onSubmit={(e) => e.preventDefault()}
           >
             <label htmlFor="footer-email" className="sr-only">
@@ -58,11 +58,11 @@ useEffect(() => {
               name="email"
               autoComplete="email"
               placeholder="Work email"
-              className="h-12 min-h-[48px] flex-1 rounded-lg border border-slate-300/50 bg-white/80 px-4 text-sm text-slate-900 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none sm:rounded-l-lg sm:rounded-r-none sm:border-r-0"
+              className="h-12 min-h-[48px] w-full min-w-0 flex-1 rounded-lg border border-slate-300/50 bg-white/80 px-4 text-sm text-slate-900 placeholder:text-slate-500 focus:border-blue-500 focus:outline-none sm:rounded-l-lg sm:rounded-r-none sm:border-r-0"
             />
             <button
               type="submit"
-              className="h-12 min-h-[48px] rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 px-6 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 sm:rounded-l-none sm:rounded-r-lg"
+              className="h-12 min-h-[48px] w-full rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 px-6 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 sm:w-auto sm:rounded-l-none sm:rounded-r-lg"
             >
               Subscribe
             </button>
@@ -70,7 +70,7 @@ useEffect(() => {
         </div>
 
         <div className="flex flex-col gap-6 border-b border-slate-200/50 py-6 text-sm text-slate-900 lg:flex-row lg:items-center lg:justify-between">
-          <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-3">
+          <nav aria-label="Footer" className="flex w-full flex-wrap justify-center gap-x-6 gap-y-3 sm:justify-start">
             <button type="button" onClick={() => onNavClick("HOME")} className="transition hover:text-blue-600">
               Home
             </button>
@@ -84,15 +84,27 @@ useEffect(() => {
               Contact
             </button>
           </nav>
-          <div className="flex flex-col gap-3 text-slate-900 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
-            <button type="button" onClick={onOpenPrivacy} className="transition hover:text-blue-600">
-              Privacy
-            </button>
-            <button type="button" onClick={onOpenTerms} className="transition hover:text-blue-600">
-              Terms
-            </button>
-            <p className="text-sm">London — United Kingdom</p>
-          </div>
+          <div className="flex items-center justify-center gap-6 whitespace-nowrap text-slate-900">
+  <button
+    type="button"
+    onClick={onOpenPrivacy}
+    className="transition hover:text-blue-600"
+  >
+    Privacy
+  </button>
+
+  <button
+    type="button"
+    onClick={onOpenTerms}
+    className="transition hover:text-blue-600"
+  >
+    Terms
+  </button>
+
+  <p className="text-sm">
+    London — United Kingdom
+  </p>
+</div>
         </div>
 
         {/* Social Media Icons */}
