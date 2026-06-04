@@ -33,7 +33,7 @@ function Counter({ value }: { value: string }) {
 
 export default function TransformSection() {
   return (
-    <section className="relative border-b border-t border-slate-900/50 overflow-hidden">
+    <section className="relative w-full border-b border-t border-slate-900/50 overflow-hidden">
        {/* Smooth blend from Hero */}
   <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-white/80 to-transparent" />
 
@@ -41,7 +41,7 @@ export default function TransformSection() {
   <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-transparent to-purple-900/80" />
 
   {/* Light overlay (IMPORTANT for Hero-like brightness) */}
-  <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 via-transparent to-purple-100/20" />
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-transparent to-purple-100/20" />
 
   {/* White soft fade */}
   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white/80" />
@@ -56,16 +56,16 @@ export default function TransformSection() {
         >
           <div className="max-w-md lg:max-w-none lg:pr-2">
             <h2 className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl lg:text-[2.05rem]">
-              Transforming ideas
+              Transforming Ideas
               <br />
-              into impact
+              Into Impact
             </h2>
           </div>
 
           <div className="col-span-full grid grid-cols-1 gap-10 sm:grid-cols-3 lg:col-span-3 lg:gap-8">
             {ideaStats.map((item) => (
               <div key={item.label}>
-                <p className="text-4xl font-extrabold bg-gradient-to-r from-[#00AEEF] to-[#CB6CE6] bg-clip-text text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
+                <p className="text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-900 bg-clip-text text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
   <Counter value={item.value} />
 </p>
                 <p className="mt-3 text-base font-medium text-slate-900 sm:text-lg lg:text-xl">{item.label}</p>

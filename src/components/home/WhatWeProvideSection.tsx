@@ -146,11 +146,17 @@ export default function WhatWeProvideSection({
   onSEO,
 }: Props) {
   return (
-    <section id="services" className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-      <h2 className="text-center text-2xl font-semibold text-slate-900 sm:text-3xl">What we provide</h2>
-      <p className="mx-auto mt-4 max-w-3xl px-2 text-center text-sm leading-relaxed text-slate-600 sm:text-base">
-        Strategy, engineering, design, and growth — stitched together so your digital presence works as one system.
-      </p>
+    <section id="services" className="relative overflow-hidden w-full">
+      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-white/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-transparent to-purple-900/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-transparent to-purple-100/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white/80" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <h2 className="text-center text-2xl font-semibold text-slate-900 sm:text-3xl">What we provide</h2>
+        <p className="mx-auto mt-4 max-w-3xl px-2 text-center text-sm leading-relaxed text-slate-600 sm:text-base">
+          Strategy, engineering, design, and growth — stitched together so your digital presence works as one system.
+        </p>
 
       <div className="mt-10 grid grid-cols-1 items-start gap-5 sm:gap-5 lg:grid-cols-3">
         <div className="lg:col-span-2">
@@ -159,7 +165,7 @@ export default function WhatWeProvideSection({
             description={cards.ecommerce.desc}
             variant="large"
             contentAlign="top"
-            imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+            imageUrl="/ecom.png"
             imagePosition="full"
             onClick={onEcommerce}
           />
@@ -171,7 +177,7 @@ export default function WhatWeProvideSection({
             imagePosition="top"
             contentAlign="bottom"
             className="pb-1"
-            imageUrl="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
+            imageUrl="/web.jpeg"
             overlayStyle="bg-[linear-gradient(to_bottom,rgba(255,255,255,0.15),rgba(255,255,255,0.9))]"
             onClick={onWebDev}
           />
@@ -197,7 +203,7 @@ export default function WhatWeProvideSection({
           customLayout={
             <div className="relative min-h-[280px] w-full overflow-hidden rounded-2xl sm:min-h-[350px]">
               <img
-                src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80"
+                src="/uiux.jpeg"
                 alt="Design workspace"
                 className="absolute inset-0 h-full w-full object-cover"
               />
@@ -249,6 +255,7 @@ export default function WhatWeProvideSection({
           }
         />
       </div>
+    </div>
     </section>
   );
 }

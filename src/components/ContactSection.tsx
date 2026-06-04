@@ -194,9 +194,9 @@ export default function ContactSection() {
     <option>E-Commerce Development</option>
     <option>App Development</option>
     <option>Video Production</option>
-    <option>Multiple Services</option>
     <option>Cloud & DevOps</option>
     <option>UI/UX Design</option>
+    <option>Multiple Services</option>
   </select>
 </div>
             <div className="mt-4">

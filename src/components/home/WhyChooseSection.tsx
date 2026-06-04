@@ -32,7 +32,7 @@ export default function WhyChooseSection({ onOpenContact }: WhyChooseSectionProp
 
       <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 xl:grid-cols-[1.6fr_0.85fr]">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">Why choose DemarkTech?</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">Why Choose DemarkTech?</h2>
 
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg sm:leading-8">
             From concept to launch, we shape digital experiences that feel premium, perform reliably, and move the metrics
@@ -81,7 +81,7 @@ export default function WhyChooseSection({ onOpenContact }: WhyChooseSectionProp
           <div className="relative z-10 flex flex-col gap-0 px-1 py-5 sm:gap-0 px-4 sm:py-1">
             <div className="mx-auto w-full max-w-md lg:mx-0">
               <img
-                src="/my-picc.jpeg"
+                src="/ch.png"
                 alt="GitLayer team collaboration"
                 className="w-full max-h-64 rounded-2xl object-cover sm:max-h-80 lg:max-h-none"
               />

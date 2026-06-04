@@ -15,7 +15,7 @@ export type NavLabel =
 
 export const SERVICES_DROPDOWN = [
   { label: "WEB DEVELOPMENT" as const, text: "Web Development" },
-  { label: "GRAPHIC DESIGNING" as const, text: "UI/UX DESIGN" },
+  { label: "GRAPHIC DESIGNING" as const, text: "UI/UX Design" },
   { label: "GIS SOLUTION" as const, text: "Cloud & DevOps" },
   { label: "E-COMMERCE DEVELOPMENT" as const, text: "E-Commerce Development" },
   { label: "SEO & CONTENT WRITING" as const, text: "SEO & Content Writing" },

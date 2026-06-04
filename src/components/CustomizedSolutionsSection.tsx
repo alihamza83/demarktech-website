@@ -172,8 +172,13 @@ export default function CustomizedSolutionsSection({
   onGis,
 }: Props) {
   return (
-    <section id="solutions" className="mx-auto max-w-7xl px-6 py-24">
-      <div className="mx-auto">
+    <section id="solutions" className="relative overflow-hidden w-full">
+      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-white/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-transparent to-purple-900/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-transparent to-purple-100/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white/80" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 sm:px-8">
         <h2 className="text-center text-3xl font-semibold text-slate-900 sm:text-4xl">
           Our Customized Solutions
         </h2>
