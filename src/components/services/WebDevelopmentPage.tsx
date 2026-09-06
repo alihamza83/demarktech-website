@@ -46,7 +46,13 @@ export default function WebDevelopmentPage({ onOpenContact }: Props) {
   ];
 
   return (
+
       <>
+      <SEO
+      title="Web Development Services | Custom Websites & Web Apps | DemarkTech"
+      description="DemarkTech provides custom web development services including responsive websites, full-stack web applications, API integrations, performance optimization, and modern React and Node.js solutions."
+      path="/web-development"
+    />
 
     <section id="web-development" className="relative w-full overflow-hidden px-6 pb-20 pt-36 lg:px-8">
       <div className="pointer-events-none absolute inset-0 -z-10">
