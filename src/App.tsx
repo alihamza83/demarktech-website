@@ -118,11 +118,11 @@ const seoData: Record<
   },
 
   "web-development": {
-    title: "Web Development Services | DemarkTech",
-    description:
-      "DemarkTech provides modern web development services to build fast, responsive, scalable, and user-friendly websites and web applications.",
-    path: "/web-development",
-  },
+  title: "Web Development Services | Custom Websites & Web Apps | DemarkTech",
+  description:
+    "DemarkTech provides custom web development services including responsive websites, full-stack web applications, API integrations, performance optimization, and modern web solutions.",
+  path: "/web-development",
+},
 
   "graphic-designing": {
     title: "UI/UX & Graphic Design Services | DemarkTech",
