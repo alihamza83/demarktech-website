@@ -1,3 +1,4 @@
+import SEO from "../SEO";
 type Props = {
   onOpenContact: () => void;
 };
@@ -45,6 +46,8 @@ export default function WebDevelopmentPage({ onOpenContact }: Props) {
   ];
 
   return (
+      <>
+
     <section id="web-development" className="relative w-full overflow-hidden px-6 pb-20 pt-36 lg:px-8">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#6d28d9]" />
@@ -60,10 +63,12 @@ export default function WebDevelopmentPage({ onOpenContact }: Props) {
             WEB DEVELOPMENT
           </p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-            Build Powerful Digital Experiences
+            Custom Web Development Services
           </h1>
           <p className="mt-5 max-w-3xl text-base text-slate-900 sm:text-lg">
-            We craft custom websites and web applications that drive results. From stunning landing pages to complex web platforms, we transform your vision into reality with cutting-edge technology and exceptional design.
+            <p className="mt-5 max-w-3xl text-base text-slate-900 sm:text-lg">
+  We build custom websites and web applications designed for performance, scalability, and business growth. From responsive business websites and landing pages to full-stack platforms and API integrations, DemarkTech delivers modern web development solutions tailored to your goals.
+</p>
           </p>
         </div>
 
@@ -164,5 +169,6 @@ export default function WebDevelopmentPage({ onOpenContact }: Props) {
         </div>
       </div>
     </section>
+     </>
   );
 }
